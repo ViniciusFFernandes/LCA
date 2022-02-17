@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NomeSistema</title>
+
+    <link href="css/padrao.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="divMsg">##Mensagem##</div>   
+    <div>
+        <form class="user" action="_BD/conecta_login.php" method="POST">
+            <input type="hidden" id="operacao" name="operacao" value="logar">
+            <div>
+                <input type="text" id="usuario" name="usuario" placeholder="Insira seu usuario..." autofocus>
+            </div>
+            <div>
+                <input type="password" id="senha" name="senha" placeholder="Insira sua senha...">
+            </div>
+            <button type="submit">
+                Logar
+            </button>
+        </form>
+    </div>
+    <div>
+        <a href="nova_conta.php">Criar nova conta</a>
+    </div>
+    
+</body>
+
+<script src="js/jquery.min.js"></script>
+
+</html>
