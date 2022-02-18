@@ -1,5 +1,5 @@
 <?php
-  require_once("../_BD/conecta_login.php");
+  require_once("_BD/conecta_login.php");
   require_once("blog.class.php");
   //
   $blog = new blog();
@@ -25,7 +25,7 @@
   }
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
-  $html = $html->buscaHtml("blog");
+  $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
   $html = str_replace("##listaPosts##", $htmlPosts, $html);
   echo $html;

@@ -1,12 +1,13 @@
 <?php
-  require_once("../_BD/conecta_login.php");
+  require_once("_BD/conecta_login.php");
   require_once("blog.class.php");
   require_once("Parsedown.php");
   //
   $blog = new blog();
   $conversorMark = new Parsedown();
   //
-  $post = $blog->buscaPost($_POST['id_cadastro']);
+  $post = $blog->buscaPost($idpost);
+  //
   if(!empty($post->error)){
     if($post->error->status == 403){
       $html->mostraErro("Você não tem acesso a este conteudo, crie uma conta e tente novamente!");
@@ -21,7 +22,7 @@
   }
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
-  $html = $html->buscaHtml("blog");
+  $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
   $html = str_replace("##tituloPost##", $post->data->attributes->titulo, $html);
   $html = str_replace("##conteudoPost##", $conversorMark->text($post->data->attributes->content), $html);

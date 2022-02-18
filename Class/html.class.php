@@ -6,7 +6,7 @@
 		}
 
 		public function mostraErro($mensagem){
-			$html = file_get_contents("../componentes/msgErro.html");
+			$html = file_get_contents("componentes/msgErro.html");
             //
             $html = str_replace("##mensagem##", $mensagem, $html);
 			//
@@ -15,7 +15,7 @@
 		}
 
 		public function mostraMensagem($tipo, $mensagem){
-			$html = file_get_contents("../componentes/msg.html");
+			$html = file_get_contents("componentes/msg.html");
             //
             $html = str_replace("##tipo##", $tipo, $html);
             $html = str_replace("##mensagem##", $mensagem, $html);
@@ -38,19 +38,21 @@
 			}
 		}
 
-		public function buscaHtml($btnMenu = ''){
-			$menu = file_get_contents('../menu.html');
+		public function buscaHtml($pathComponente){
+			$menu = file_get_contents('menu.html');
 			if($_SESSION['logado']){
-				$menu = str_replace("##MinhaConta##", file_get_contents('../componentes/btnMinhaConta.html'), $menu);
+				$menu = str_replace("##MinhaConta##", file_get_contents('componentes/btnMinhaConta.html'), $menu);
 			}else{
-				$menu = str_replace("##MinhaConta##", file_get_contents('../componentes/btnLogin.html'), $menu);
+				$menu = str_replace("##MinhaConta##", file_get_contents('componentes/btnLogin.html'), $menu);
 			}
 			//
-			$includes = file_get_contents('../includes.html');
+			$includes = file_get_contents('includes.html');
 			//
-			$nome = explode(".", basename($_SERVER['PHP_SELF']));
-			$nomeArquivo = $nome[0] . ".html";
-			$html = file_get_contents("_HTML/" . $nomeArquivo);
+			// var_dump($pathComponente);
+			$patch = end(explode("\\", $pathComponente['dirname']));
+			$nomeArquivo = $pathComponente['filename'] . ".html";
+			// var_dump(file_get_contents($patch . "/_HTML/" . $nomeArquivo));
+			$html = file_get_contents($patch . "/_HTML/" . $nomeArquivo);
 			$html = str_replace("##Menu##", $menu, $html);
 			$html = str_replace("##includes##", $includes, $html);
 			$html = str_replace("##includesRelatorios##", $includesRelatorios, $html);

@@ -1,5 +1,5 @@
 <?php
-  require_once("../_BD/conecta_login.php");
+  require_once("_BD/conecta_login.php");
   require_once("usuarios.class.php");
   //
   $usuarios = new usuarios();
@@ -12,7 +12,7 @@
   }
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
-  $html = $html->buscaHtml("blog");
+  $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
   $html = str_replace("##nome##", $dadosUser->username, $html);
   $html = str_replace("##email##", $dadosUser->email, $html);

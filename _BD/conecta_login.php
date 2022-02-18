@@ -3,8 +3,15 @@ session_start();
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 date_default_timezone_set('America/Sao_Paulo');
 //
-// print_r($_REQUEST);exit;
-require_once("../set_path.php");
+//Adicona os path padrões do sistema
+$path = PATH_SEPARATOR . '../Class/';
+$path .= PATH_SEPARATOR . 'Class/';
+$path .= PATH_SEPARATOR . '../privado/';
+$path .= PATH_SEPARATOR . 'privado/';
+$path .= PATH_SEPARATOR . '../_BD/';
+$path .= PATH_SEPARATOR . '_BD/';
+set_include_path(get_include_path() . $path);
+//
 require_once("usuarios.class.php");
 require_once("html.class.php");
 require_once("util.class.php");
@@ -36,13 +43,13 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['email'] 							= $dados->user->email;
 		$_SESSION['idusuario']				 	    = $dados->user->id;
 		$_SESSION['jwt']				 	    	= $dados->jwt;
-		header('Location: ../_Blog/blog');
+		header('Location: ../Blog/');
 		exit;
 	}else{
 		$_SESSION['logado'] = false;
 		$_SESSION['mensagem'] = "Usuario ou senha incorretos!!!<br>Tente novamente";
     	$_SESSION['tipoMsg'] = "danger";
-		header('location: ../index.php');
+		header('location: index.php');
 		exit;
 	}
 }
@@ -55,12 +62,12 @@ if($_POST['operacao'] == 'novaConta'){
 	if(!empty($dados->jwt)){
 		$_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
     	$_SESSION['tipoMsg'] = "succes";
-		header('location: ../index.php');
+		header('location: index.php');
 		exit;
 	}else{
 		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";
     	$_SESSION['tipoMsg'] = "error";
-		header('location: ../_Usuario/nova_conta.php');
+		header('location: Cadastrar');
 		exit;
 	}
 }

@@ -67,7 +67,7 @@
 		}
 
         public function geraPost($dados){
-            $html = file_get_contents("_HTML/componentes/postMini.html");
+            $html = file_get_contents("_Blog/_HTML/componentes/postMini.html");
             //
             $html = str_replace("##tituloPost##", $dados->attributes->titulo, $html);
 			$html = str_replace("##idPost##", $dados->id, $html);

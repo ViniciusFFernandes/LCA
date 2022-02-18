@@ -1,13 +1,8 @@
 <?php 
-  //Inicia Sessão
-  session_start(); 
-  //
-  //Desativa os erros e permite apenas avisos
-  error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
   //
   //Verifica se já está logado
   if($_SESSION['logado']){
-    header('Location: _Blog/blog');
+    header('Location: Blog/');
     exit;
   }
   //
@@ -16,13 +11,11 @@
     exit;
   }
   //
-  require_once("set_path.php");
-  //
   require_once("privado/constantes.lca");
   //
   //Inclui classes
-  require_once("html.class.php");
-  $html = new html('');
+  require_once("Class/html.class.php");
+  $html = new html();
   //
   //Monta variaveis de exibição
   if (isset($_SESSION['mensagem'])) {
