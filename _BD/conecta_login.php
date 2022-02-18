@@ -36,13 +36,13 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['email'] 							= $dados->user->email;
 		$_SESSION['idusuario']				 	    = $dados->user->id;
 		$_SESSION['jwt']				 	    	= $dados->jwt;
-		header('Location: ../_Blog/blog.php');
+		header('Location: ../_Blog/blog');
 		exit;
 	}else{
 		$_SESSION['logado'] = false;
 		$_SESSION['mensagem'] = "Usuario ou senha incorretos!!!<br>Tente novamente";
     	$_SESSION['tipoMsg'] = "danger";
-		header('location:../index.php');
+		header('location:../');
 		exit;
 	}
 }
@@ -55,12 +55,12 @@ if($_POST['operacao'] == 'novaConta'){
 	if(!empty($dados->jwt)){
 		$_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
     	$_SESSION['tipoMsg'] = "succes";
-		header('location:../index.php');
+		header('location:../');
 		exit;
 	}else{
 		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";
     	$_SESSION['tipoMsg'] = "error";
-		header('location:../nova_conta.php');
+		header('location:../nova_conta');
 		exit;
 	}
 }
@@ -69,7 +69,7 @@ if($_POST['operacao'] == 'novaConta'){
 //Operação para deslogar do sistema
 if ($_POST['operacao'] == "Sair") {
 	session_destroy();
-	header('Location: ../index.php');
+	header('Location: ../');
 	exit;
 }
 
