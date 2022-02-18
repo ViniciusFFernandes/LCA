@@ -42,7 +42,7 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['logado'] = false;
 		$_SESSION['mensagem'] = "Usuario ou senha incorretos!!!<br>Tente novamente";
     	$_SESSION['tipoMsg'] = "danger";
-		header('location:../');
+		header('location: ../index.php');
 		exit;
 	}
 }
@@ -55,12 +55,12 @@ if($_POST['operacao'] == 'novaConta'){
 	if(!empty($dados->jwt)){
 		$_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
     	$_SESSION['tipoMsg'] = "succes";
-		header('location:../');
+		header('location: ../index.php');
 		exit;
 	}else{
 		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";
     	$_SESSION['tipoMsg'] = "error";
-		header('location:../nova_conta');
+		header('location: ../_Usuario/nova_conta.php');
 		exit;
 	}
 }
@@ -69,7 +69,7 @@ if($_POST['operacao'] == 'novaConta'){
 //Operação para deslogar do sistema
 if ($_POST['operacao'] == "Sair") {
 	session_destroy();
-	header('Location: ../');
+	header('Location: ../index.php');
 	exit;
 }
 
