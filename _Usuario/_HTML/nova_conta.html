@@ -11,14 +11,12 @@
 
     <title>NomeSistema</title>
 
-    <link href="css/padrao.css" rel="stylesheet">
-
 </head>
 
 <body>
     <div class="divMsg">##Mensagem##</div>
     <div>
-        <form class="user" action="_BD/conecta_login.php" method="POST" id="formNovoUsuario">
+        <form class="user" action="../_BD/conecta_login.php" method="POST" id="formNovoUsuario">
             <input type="hidden" id="operacao" name="operacao" value="novaConta">
             <div>
                 <input type="text" id="nome" name="nome" placeholder="Insira seu nome" autofocus>
@@ -35,7 +33,7 @@
             <button type="button" onclick="inserirUsuario()">
                 Criar Conta
             </button>
-            <button type="button" onclick="direciona('index')">
+            <button type="button" onclick="direciona('../')">
                 Voltar
             </button>
         </form>
@@ -43,7 +41,7 @@
     
 </body>
 
-<script src="js/jquery.min.js"></script> 
-<script src="js/padrao.js"></script>
+<script src="../js/jquery.min.js"></script> 
+<script src="../js/padrao.js"></script>
 
 </html>

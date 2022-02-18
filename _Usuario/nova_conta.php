@@ -10,7 +10,7 @@
   //
   //Inclui classes
   require_once("html.class.php");
-  $html = new html('');
+  $html = new html($router->Path, $router->File);
   //
   //Monta variaveis de exibição
   if (isset($_SESSION['mensagem'])) {
@@ -19,7 +19,7 @@
   }
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
-  $html = file_get_contents('novaConta.html');
+  $html = $html->buscaHtml("blog");
   $html = str_replace("##Mensagem##", $msg, $html);
   echo $html;
   exit;
