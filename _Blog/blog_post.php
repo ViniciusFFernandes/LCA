@@ -1,9 +1,9 @@
 <?php
   require_once("_BD/conecta_login.php");
   require_once("blog.class.php");
-  require_once("Parsedown.php");
   //
   $blog = new blog();
+  //
   $conversorMark = new Parsedown();
   //
   $post = $blog->buscaPost($idpost);

@@ -1,5 +1,6 @@
 {
     "require": {
-        "erandir/plug-route": "^4.1"
+        "erandir/plug-route": "^4.1",
+        "erusev/parsedown": "^1.7"
     }
 }

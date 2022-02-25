@@ -1,42 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>NomeSistema</title>
-
-    <link href="css/padrao.css" rel="stylesheet">
-
-</head>
-
-<body>
-    <div class="divMsg">##Mensagem##</div>   
-    <div>
-        <form class="user" action="_BD/conecta_login.php" method="POST">
-            <input type="hidden" id="operacao" name="operacao" value="logar">
-            <div>
-                <input type="text" id="usuario" name="usuario" placeholder="Insira seu usuario..." autofocus>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Liga Classe A</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <div class="row pt-3">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 pt-3 blog_item">
+                <form class="contact_form" action="_BD/conecta_login.php" method="POST" >
+                    <input type="hidden" id="operacao" name="operacao" value="logar">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Insira seu usuario..." autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="senha" name="senha" placeholder="Insira sua senha...">
+                    </div>
+                    <center><button type="submit" class="btn submit_btn">Logar</button></center>
+                    <center><a href="Cadastrar">Criar nova conta</a></center>
+                </form>
             </div>
-            <div>
-                <input type="password" id="senha" name="senha" placeholder="Insira sua senha...">
-            </div>
-            <button type="submit">
-                Logar
-            </button>
-        </form>
-    </div>
-    <div>
-        <a href="Cadastrar">Criar nova conta</a>
-    </div>
-    
-</body>
+            <div class="col-lg-3"></div>
+        </div>
+    </body>
 
-<script src="js/jquery.min.js"></script>
-
+    <!-- main js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/padrao.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/isotope/isotope.pkgd.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendors/counter-up/jquery.counterup.min.js"></script>
+    <script src="js/theme.js"></script>
 </html>

@@ -49,7 +49,7 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['logado'] = false;
 		$_SESSION['mensagem'] = "Usuario ou senha incorretos!!!<br>Tente novamente";
     	$_SESSION['tipoMsg'] = "danger";
-		header('location: index.php');
+		header('location: ../index.php');
 		exit;
 	}
 }

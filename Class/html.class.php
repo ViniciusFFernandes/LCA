@@ -39,14 +39,15 @@
 		}
 
 		public function buscaHtml($pathComponente){
-			$menu = file_get_contents('menu.html');
+			$menu = file_get_contents('componentes/menu.html');
 			if($_SESSION['logado']){
 				$menu = str_replace("##MinhaConta##", file_get_contents('componentes/btnMinhaConta.html'), $menu);
 			}else{
 				$menu = str_replace("##MinhaConta##", file_get_contents('componentes/btnLogin.html'), $menu);
 			}
 			//
-			$includes = file_get_contents('includes.html');
+			$includes = file_get_contents('componentes/includes.html');
+			// $footer = file_get_contents('componentes/footer.html');
 			//
 			// var_dump($pathComponente);
 			$patch = end(explode("\\", $pathComponente['dirname']));
@@ -54,6 +55,7 @@
 			// var_dump(file_get_contents($patch . "/_HTML/" . $nomeArquivo));
 			$html = file_get_contents($patch . "/_HTML/" . $nomeArquivo);
 			$html = str_replace("##Menu##", $menu, $html);
+			$html = str_replace("##footer##", $footer, $html);
 			$html = str_replace("##includes##", $includes, $html);
 			$html = str_replace("##includesRelatorios##", $includesRelatorios, $html);
 			//

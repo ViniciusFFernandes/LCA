@@ -37,5 +37,14 @@
             'reference' => 'adbd878b070b129f74b2dae12674f43c0a52412b',
             'dev_requirement' => false,
         ),
+        'erusev/parsedown' => array(
+            'pretty_version' => '1.7.4',
+            'version' => '1.7.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../erusev/parsedown',
+            'aliases' => array(),
+            'reference' => 'cb17b6477dfff935958ba01325f2e8a2bfa6dab3',
+            'dev_requirement' => false,
+        ),
     ),
 );
