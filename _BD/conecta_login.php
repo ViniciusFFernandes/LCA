@@ -43,7 +43,7 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['email'] 							= $dados->user->email;
 		$_SESSION['idusuario']				 	    = $dados->user->id;
 		$_SESSION['jwt']				 	    	= $dados->jwt;
-		header('Location: ../Blog/');
+		header('Location: ../blog/');
 		exit;
 	}else{
 		$_SESSION['logado'] = false;
@@ -67,7 +67,7 @@ if($_POST['operacao'] == 'novaConta'){
 	}else{
 		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";
     	$_SESSION['tipoMsg'] = "error";
-		header('location: Cadastrar');
+		header('location: cadastrar');
 		exit;
 	}
 }

@@ -2,7 +2,7 @@
   //
   //Verifica se já está logado
   if($_SESSION['logado']){
-    header('Location: Blog/');
+    header('Location: blog/');
     exit;
   }
   //

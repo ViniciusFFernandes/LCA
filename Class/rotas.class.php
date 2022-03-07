@@ -10,15 +10,15 @@
 		require_once("login.php");
 	});
 
-	$route->get('/Cadastrar', function() {
+	$route->get('/cadastrar', function() {
 		require_once("_Usuario/nova_conta.php");
 	});
 
-	$route->get('/Perfil/', function() {
+	$route->get('/perfil/', function() {
 		require_once("_Usuario/perfil.php");
 	});
 
-	$route->group(['prefix' => '/Blog'], function($route) {
+	$route->group(['prefix' => '/blog'], function($route) {
 		$route->get('/', function() {
 			require_once("_Blog/blog.php");
 		});
