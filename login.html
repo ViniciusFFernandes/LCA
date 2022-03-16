@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt">
+<html lang="pt" class="bodyLogin">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -7,37 +7,32 @@
         <link rel="icon" href="img/favicon.png" type="image/png">
         <title>Liga Classe A</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
         <!-- main css -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/padrao.css">
     </head>
-    <body>
-        
-        <!--================Header Menu Area =================-->
-        <div class="row pt-3">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6 pt-3 blog_item">
-                <form class="contact_form" action="_BD/conecta_login.php" method="POST" >
-                    <input type="hidden" id="operacao" name="operacao" value="logar">
-                    <div class="form-group">
-                        <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Insira seu usuario..." autofocus>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="password" id="senha" name="senha" placeholder="Insira sua senha...">
-                    </div>
-                    <center><button type="submit" class="btn submit_btn">Logar</button></center>
-                    <center><a href="cadastrar">Criar nova conta</a></center>
-                </form>
+    <body class="bodyLogin">
+        <div class="container-fluid linhaLogin">
+            <div class="row linhaLogin">
+                <div class="col-lg-8 col-md-6 col-sm-5 d-none d-sm-block">
+                    <center class="alinhaCentro"><img src="img/logoGrandeTransparente.png" class="img-fluid" width="80%"></center>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-7 col-12 cardLogin">
+                    <form class="alinhaCentro" action="_BD/conecta_login.php" method="POST" >
+                        <center><img src="img/logo.png" class="img-fluid" width="40%"></center>
+                        <input type="hidden" id="operacao" name="operacao" value="logar">
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="usuario" name="usuario" placeholder="Usuario" autofocus>
+                        </div>
+                        <div class="form-group pb-4">
+                            <input class="form-control" type="password" id="senha" name="senha" placeholder="Senha">
+                        </div>
+                        <center class="pb-3"><button type="submit" class="btn btnRed">ENTRAR</button></center>
+                        <center><a href="cadastrar" class="link">CRIAR CONTA</a></center>
+                    </form>
+                </div>
             </div>
-            <div class="col-lg-3"></div>
         </div>
     </body>
 
@@ -46,16 +41,6 @@
     <script src="js/jquery.mask.js"></script>
     <script src="js/padrao.js"></script>
     <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/stellar.js"></script>
-    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-    <script src="vendors/isotope/isotope.pkgd.min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendors/counter-up/jquery.counterup.min.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/lightbox/simpleLightbox.min.js"></script>
 </html>

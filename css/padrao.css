@@ -1,0 +1,55 @@
+.bodyLogin{
+    background-color: #EE0000;
+    height: 100%;
+    margin: 0px;
+}
+
+.linhaLogin{
+    height: 100%;
+}
+
+.cardLogin{
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.alinhaCentro{
+    position: relative;
+    top: 50% !important;
+    transform: translateY(-50%); 
+}
+
+.form-group .form-control{
+    border-radius: 10px;
+}
+
+.btnRed{
+    background-color: #EE0000;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btnRed:hover{
+    background-color: white;
+    color: #EE0000;
+    border-color: #EE0000;
+}
+
+.link{
+    color: #EE0000;
+    font-weight: bold;
+}
+
+.link:hover{
+    color: #EE0000;
+}
+
+@media (max-width:575px){
+    .cardLogin{
+      border-radius: 0;
+    }
+}
