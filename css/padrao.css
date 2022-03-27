@@ -63,6 +63,20 @@
     z-index: -9998;
 }
 
+.divCinzaParceiros{
+    position: relative;
+    top: 180px !important;
+    background-color: #adadad;
+    height: 200px;
+    width: 100%;
+    z-index: -9998;
+}
+
+.parceiros_area{
+    background-color: #adadad;
+    z-index: -9999;
+}
+
 .divVermelha{
     position: absolute;
     top: 255px !important;
@@ -73,9 +87,17 @@
 }
 
 .divNovidade{
-    padding-top: 3.5rem;
-    padding-bottom: 1.4rem;
+    padding-top: 6rem;
+    /* padding-bottom: 1rem; */
     width: 100%;
+}
+
+
+.divParceiros{
+    padding-top: 4rem;
+    /* padding-bottom: 1.4rem; */
+    width: 100%;
+    z-index: -9997;
 }
 
 .divDadosPost{
@@ -90,22 +112,22 @@
 }
 
 .nav-link{
-    font-weight: bold;
-    color: rgb(24, 24, 24);
+    font-weight: bold !important; 
+    color: rgb(24, 24, 24) !important;
 }
 
 .nav-link:hover{
-    font-weight: bold;
-    color: #EE0000;
+    font-weight: bold !important;
+    color: #EE0000 !important;
 }
 
 .dropdown-item{
-    font-weight: bold;
-    color: rgb(24, 24, 24);
+    font-weight: bold !important;
+    color: rgb(24, 24, 24) !important;
 }
 
 .dropdown-item:hover{
-    color: #EE0000;
+    color: #EE0000 !important;
 }
 
 .navbar{
@@ -135,13 +157,12 @@
 }
 
 @media (max-width:768px){
-    .divNovidade{
-        padding-top: 2rem;
-    }
     
     .divCinza{
         top: 15% !important;
-        height: 150px;
+        height: 200px;
+        width: 96%;
+        left: 2% !important;
     }
 
     .divVermelha{
