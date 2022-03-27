@@ -48,8 +48,103 @@
     color: #EE0000;
 }
 
+.imgLogoBlog{
+    position: relative;
+    top: -60px !important;
+}
+
+.divCinza{
+    position: absolute;
+    top: 140px !important;
+    left: 5% !important;
+    background-color: #adadad;
+    height: 200px;
+    width: 90%;
+    z-index: -9998;
+}
+
+.divVermelha{
+    position: absolute;
+    top: 255px !important;
+    background-color: #EE0000;
+    height: 150px;
+    width: 100%;
+    z-index: -9999;
+}
+
+.divNovidade{
+    padding-top: 3.5rem;
+    padding-bottom: 1.4rem;
+    width: 100%;
+}
+
+.divDadosPost{
+    font-weight: bold;
+    color: #8d0000;
+    font: 15px;
+}
+
+.divDescricaoPost{
+    font-size: 18px;
+    color: rgb(24, 24, 24);
+}
+
+.nav-link{
+    font-weight: bold;
+    color: rgb(24, 24, 24);
+}
+
+.nav-link:hover{
+    font-weight: bold;
+    color: #EE0000;
+}
+
+.dropdown-item{
+    font-weight: bold;
+    color: rgb(24, 24, 24);
+}
+
+.dropdown-item:hover{
+    color: #EE0000;
+}
+
+.navbar{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar{
+    -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow:    0px 2px 3px rgba(50, 50, 50, 0.77);
+    box-shadow:         0px 2px 3px rgba(50, 50, 50, 0.77);
+    
+}
+
+.header_area{
+    margin-bottom: 100px;
+}
+
+.collapse{
+    width: 100%;
+}
+
 @media (max-width:575px){
     .cardLogin{
       border-radius: 0;
+    }
+}
+
+@media (max-width:768px){
+    .divNovidade{
+        padding-top: 2rem;
+    }
+    
+    .divCinza{
+        top: 15% !important;
+        height: 150px;
+    }
+
+    .divVermelha{
+        top: 220px !important;
     }
 }

@@ -77,12 +77,12 @@ class Util{
 				return $dataFormatada;
 	}
 
-	public function convertDataAPI($string){
+	public function convertDataAPI($string, $retornaHora = true){
 		if ($string != "") {
 					$string = explode("T", $string);
 					$data = explode("-", $string[0]);
 					$dataFormatada = $data[2] . "/" . $data[1] . "/" . $data[0];
-					if (!empty($string[1])) {
+					if (!empty($string[1]) && $retornaHora) {
 						$dataFormatada .= " " . substr($string[1], 0, 5);
 					}
 				}else {

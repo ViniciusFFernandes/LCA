@@ -47,7 +47,6 @@
 			}
 			//
 			$includes = file_get_contents('componentes/includes.html');
-			// $footer = file_get_contents('componentes/footer.html');
 			//
 			// var_dump($pathComponente);
 			$patch = end(explode("\\", $pathComponente['dirname']));
@@ -55,7 +54,6 @@
 			// var_dump(file_get_contents($patch . "/_HTML/" . $nomeArquivo));
 			$html = file_get_contents($patch . "/_HTML/" . $nomeArquivo);
 			$html = str_replace("##Menu##", $menu, $html);
-			$html = str_replace("##footer##", $footer, $html);
 			$html = str_replace("##includes##", $includes, $html);
 			$html = str_replace("##includesRelatorios##", $includesRelatorios, $html);
 			//

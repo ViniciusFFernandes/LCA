@@ -15,8 +15,12 @@
   }
   //
   $htmlPosts = '';
+  //
+  $i = 1;
+  //
   foreach($posts->data AS $post){
-    $htmlPosts .= $blog->geraPost($post);
+    $htmlPosts .= $blog->geraPost($post, $i);
+    $i++;
   }
   //
   if (isset($_SESSION['mensagem'])) {

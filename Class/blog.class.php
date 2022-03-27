@@ -66,12 +66,17 @@
 			return $resposta;
 		}
 
-        public function geraPost($dados){
+        public function geraPost($dados, $postNumero){
+            $tamanhoDiv = "col-lg-4 col-md-4 col-sm-6";
+            if($postNumero <= 2){
+                $tamanhoDiv = "col-lg-6 col-md-6 col-sm-6";
+            }
             $html = file_get_contents("_Blog/_HTML/componentes/postMini.html");
             //
             $html = str_replace("##tituloPost##", $dados->attributes->titulo, $html);
+            $html = str_replace("##tamnhoDiv##", $tamanhoDiv, $html);
 			$html = str_replace("##idPost##", $dados->id, $html);
-			$html = str_replace("##dataPublicacao##", $this->util->convertDataAPI($dados->attributes->publishedAt), $html);
+			$html = str_replace("##dataPublicacao##", $this->util->convertDataAPI($dados->attributes->publishedAt, false), $html);
             //
             return $html;
         }
