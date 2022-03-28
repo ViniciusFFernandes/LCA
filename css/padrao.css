@@ -22,21 +22,105 @@
     transform: translateY(-50%); 
 }
 
-.form-group .form-control{
+.form-control{
     border-radius: 10px;
+    border-color: rgb(87, 87, 87) !important;
+    color: rgb(41, 41, 41) !important;
 }
 
-.btnRed{
+.btnRedLogin{
     background-color: #EE0000;
     color: white;
     font-weight: bold;
     width: 100%;
 }
 
+.btnRedLogin:hover{
+    background-color: white;
+    color: #EE0000;
+    border-color: #EE0000;
+}
+
+.btnRed{
+    background-color: #EE0000;
+    color: white;
+    font-weight: bold;
+    /* width: 100%; */
+    border-radius: 20px;
+    padding: 10px 30px !important;
+}
+
 .btnRed:hover{
     background-color: white;
     color: #EE0000;
     border-color: #EE0000;
+}
+
+.btnCinza{
+    background-color: #b8b8b8;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    /* width: 100%; */
+    border-radius: 20px;
+    padding: 10px 30px !important;
+}
+
+.divCarteirinha{
+    background-image: url("../img/fundoCarteirinha.png");
+    background-size: 550px;
+    background-repeat: no-repeat;
+    width: 550px;
+    height: 308px;
+    border-radius: 15px;
+}
+
+.nomeCarteirinha{
+    position: relative;
+    left: -130px; 
+    top: 100px;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+}
+
+.cpfCarteirinha{
+    position: relative;
+    left: -130px; 
+    top: 98px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    width: 250px;
+}
+
+.numeroCarteirinha{
+    position: relative;
+    left: -130px; 
+    top: 230px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 250px;
+}
+
+.validadeCarteirinha{
+    position: relative;
+    left: 135px;
+    top: 195px;
+    color: white;
+    font-weight: bold;
+    font-size: 8px;
+    width: 250px;
+}
+
+.dataCarteirinha{
+    font-size: 12px;
+}
+
+.btnCinza:hover{
+    background-color: white;
+    border-color: #b8b8b8;
+    color: #b8b8b8;
 }
 
 .link{
@@ -72,6 +156,16 @@
     z-index: -9998;
 }
 
+.divCinzaUsuario{
+    position: absolute;
+    top: 140px !important;
+    left: 5% !important;
+    background-color: #adadad;
+    height: 130px;
+    width: 90%;
+    z-index: -9998;
+}
+
 .parceiros_area{
     background-color: #adadad;
     z-index: -9999;
@@ -86,12 +180,36 @@
     z-index: -9999;
 }
 
+.divVermelhaUsuario{
+    position: absolute;
+    top: 200px !important;
+    background-color: #EE0000;
+    height: 230px;
+    width: 100%;
+    z-index: -9999;
+}
+
 .divNovidade{
     padding-top: 6rem;
     /* padding-bottom: 1rem; */
     width: 100%;
 }
 
+.divUsuario{
+    padding-top: 6.5rem;
+    position: relative;
+    /* padding-bottom: 1rem; */
+    width: 84%;
+    left: 8%;
+}
+
+.nomeUsuario{
+    position: relative;
+    top: 45px;
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
 
 .divParceiros{
     padding-top: 4rem;
@@ -150,6 +268,35 @@
     width: 100%;
 }
 
+.membroNumero{
+    position: relative;
+    color: #EE0000;
+    font-weight: bold;
+    top: -6px;
+    width: 100%;
+    padding-right: 5px;
+}
+
+.usuario_area{
+    padding-top: 4rem !important;
+}
+
+.link-usuario.active{
+    color: #EE0000 !important;
+}
+
+.link-usuario.active:hover{
+    color: #EE0000 !important;
+}
+
+.link-usuario{
+    color: white !important;
+}
+
+.link-usuario:hover{
+    color: white !important;
+}
+
 @media (max-width:575px){
     .cardLogin{
       border-radius: 0;
@@ -168,4 +315,46 @@
     .divVermelha{
         top: 220px !important;
     }
+}
+
+@media (max-width:650px){
+    .divCarteirinha{
+        background-size: 400px;
+        width: 400px;
+        height: 225px;
+        border-radius: 15px;
+    }
+    
+    .nomeCarteirinha{
+        left: -89px; 
+        top: 70px;
+        width: 200px;
+        font-size: 13px;
+    }
+    
+    .cpfCarteirinha{
+        left: -89px; 
+        top: 70px;
+        width: 200px;
+        font-size: 9px;
+    }
+    
+    .numeroCarteirinha{
+        left: -89px; 
+        top: 160px;
+        width: 200px;
+        font-size: 14px;
+    }
+    
+    .validadeCarteirinha{
+        left: 65px;
+        top: 137px;
+        width: 250px;
+        font-size: 6px;
+    }
+
+    .dataCarteirinha{
+        font-size: 9px;
+    }
+    
 }

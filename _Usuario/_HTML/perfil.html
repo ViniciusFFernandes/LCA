@@ -16,23 +16,141 @@
             ##Menu##
         </header>
         
-        <!--================Blog Area =================-->
-        <section class="blog_area pt-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8 blog_item">
-                        <center><img class="author_img rounded-circle" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="" width="100px"></center>
-                        <div style="color: #262626;"><b style="color: #262626;">Nome:</b> ##nome##</div>
-                        <div style="color: #262626;"><b style="color: #262626;">Email:</b> ##email##</div>
+        <!--================Usuario Area =================-->
+        <div class="divCinzaUsuario" align="center">
+            <img src="../img/logoSimbulo.png" class="img-fluid imgLogoBlog" width="120px">
+            <div class="membroNumero" align="right">Membro LCA ###numeroMembro##</div>
+        </div>
+        <div class="divVermelhaUsuario"></div>
+        <div class="divUsuario" >
+            <img src="../img/usuario.png" class="rounded-circle" width="120px">
+            <span class="nomeUsuario">##nome##</span>
+        </div>
+        <section class="usuario_area">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block"></div>
+              <div class="col-lg-10 col-md-10 col-sm-10 col-12">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link link-usuario active" data-toggle="tab" href="#conta">Minha Conta</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-usuario" data-toggle="tab" href="#banco">Dados Bancários</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link link-usuario" data-toggle="tab" href="#assinatura">Assinaturas</a>
+                  </li>
+                </ul>
+                  
+                  <!-- Tab panes -->
+                <div class="tab-content">
+                  <div id="conta" class="tab-pane active">
+                    <div class="row pt-5 pb-5">
+                      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <form action="#" method="POST" >
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                              <div class="form-group">
+                                <label for="nome"><b>Nome</b></label>
+                                <input readonly class="form-control" type="text" id="nome" name="nome" value="##nome##">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                              <div class="form-group">
+                                <label for="apelido"><b>Apelido</b></label>
+                                <input readonly class="form-control" type="text" id="apelido" name="apelido" value="##apelido##">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                              <div class="form-group">
+                                <label for="cpf"><b>CPF</b></label>
+                                <input readonly class="form-control" type="text" id="cpf" name="cpf" value="##cpf##">
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                              <div class="form-group">
+                                <label for="rg"><b>RG</b></label>
+                                <input readonly class="form-control" type="text" id="rg" name="rg" value="##rg##">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                              <div class="form-group">
+                                <label for="cidade"><b>Cidade</b></label>
+                                <input readonly class="form-control" type="text" id="cidade" name="cidade" value="##cidade##">
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                              <div class="form-group">
+                                <label for="estado"><b>Estado</b></label>
+                                <input readonly class="form-control" type="text" id="estado" name="estado" value="##estado##">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                              <div class="form-group">
+                                <label for="email"><b>Email</b></label>
+                                <input readonly class="form-control" type="text" id="email" name="email" value="##email##">
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="row pb-3">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-0" align="center">
+                            <div class="divCarteirinha">
+                              <div class="nomeCarteirinha" align="left">Leonardo Oliveira Rodrigues</div>
+                              <div class="cpfCarteirinha" align="left">999.999.999-99</div>
+                              <div class="numeroCarteirinha" align="left">#9999</div>
+                              <div class="validadeCarteirinha" align="right">Válido até <br> <span class="dataCarteirinha">03/2023</span></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-12 pb-3" align="center">
+                            <button type="button" class="btn btnRed">Salvar como PDF</button>
+                          </div>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-12" align="center">
+                            <button type="button" class="btn btnCinza">Imprimir</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-lg-2"></div>
+                  </div>
+                  <div id="banco" class="tab-pane fade">
+                    <div class="row pt-5">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h3>Em Desenvolvimento!</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="assinatura" class="tab-pane fade">
+                    <div class="row pt-5">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h3>Em Desenvolvimento!</h3>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block"></div>
             </div>
+            <div class="row pt-5 pb-4">
+              <div class="col-12" align="center">
+                <button type="button" class="btn btnRed" onclick="deslogarConta()">Sair</button>
+              </div>
+            </div>
+          </div>
         </section>
-        <!--================Blog Area =================-->
+        <!--================Usuario Area =================-->
         
-        <!--================Footer Area =================-->
-        ##footer##
     </body>
 </html>

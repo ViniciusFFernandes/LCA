@@ -15,7 +15,13 @@
   $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
   $html = str_replace("##nome##", $dadosUser->username, $html);
+  $html = str_replace("##apelido##", '', $html);
+  $html = str_replace("##cpf##", '', $html);
+  $html = str_replace("##rg##", '', $html);
+  $html = str_replace("##cidade##", '', $html);
+  $html = str_replace("##estado##", '', $html);
   $html = str_replace("##email##", $dadosUser->email, $html);
+  $html = str_replace("##numeroMembro##", $dadosUser->id, $html);
   echo $html;
   exit;
 ?>
