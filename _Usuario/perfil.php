@@ -5,6 +5,10 @@
   $usuarios = new usuarios();
   //
   $dadosUser = $usuarios->buscarUsuario();
+  // echo "<pre>";
+  // print_r($dadosUser);
+  // echo "</pre>";
+  // exit;
   //
   if (isset($_SESSION['mensagem'])) {
     $msg = $html->mostraMensagem($_SESSION['tipoMsg'], $_SESSION['mensagem']);
@@ -14,14 +18,20 @@
   //Abre o arquivo html e Inclui mensagens e trechos php
   $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
-  $html = str_replace("##nome##", $dadosUser->username, $html);
-  $html = str_replace("##apelido##", '', $html);
-  $html = str_replace("##cpf##", '', $html);
-  $html = str_replace("##rg##", '', $html);
-  $html = str_replace("##cidade##", '', $html);
-  $html = str_replace("##estado##", '', $html);
-  $html = str_replace("##email##", $dadosUser->email, $html);
+  $html = str_replace("##nome##", $dadosUser->attributes->name, $html);
+  $html = str_replace("##apelido##", $dadosUser->attributes->surname, $html);
+  $html = str_replace("##cpf##", $dadosUser->attributes->CPF, $html);
+  $html = str_replace("##rg##", $dadosUser->attributes->RG, $html);
+  $html = str_replace("##rua##", $dadosUser->attributes->street, $html);
+  $html = str_replace("##numero##", $dadosUser->attributes->address_number, $html);
+  $html = str_replace("##cidade##", $dadosUser->attributes->city, $html);
+  $html = str_replace("##estado##", $dadosUser->attributes->district, $html);
+  $html = str_replace("##bairro##", $dadosUser->attributes->district, $html);
+  $html = str_replace("##cep##", $dadosUser->attributes->CEP, $html);
+  $html = str_replace("##validade##", '', $html);
+  $html = str_replace("##email##", $dadosUser->attributes->users_permissions_user->data->attributes->email, $html);
   $html = str_replace("##numeroMembro##", $dadosUser->id, $html);
+  $html = str_replace("##idcliente##", $dadosUser->id, $html);
   echo $html;
   exit;
 ?>

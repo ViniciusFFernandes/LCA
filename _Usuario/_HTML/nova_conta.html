@@ -21,12 +21,15 @@
                 <div class="col-lg-4 col-md-6 col-sm-7 col-12 cardLogin">
                     <form class="alinhaCentro" action="_BD/conecta_login.php" method="POST" id="formNovoUsuario">
                         <center><img src="img/logo.png" class="img-fluid" width="40%"></center>
-                        <input type="hidden" id="operacao" name="operacao" value="logar">
+                        <input type="hidden" id="operacao" name="operacao" value="novaConta">
                         <div class="form-group">
                             <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome" autofocus>
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="CPF">
                         </div>
                         <div class="form-group">
                             <input class="form-control" type="password" id="senha" name="senha" placeholder="Senha">
@@ -46,6 +49,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mask.js"></script>
     <script src="js/padrao.js"></script>
+    <script src="js/_Usuario/nova_conta.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/lightbox/simpleLightbox.min.js"></script>

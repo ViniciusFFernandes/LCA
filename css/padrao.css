@@ -248,6 +248,11 @@
     color: #EE0000 !important;
 }
 
+.dropdown-item:active{
+    background-color: #EE0000 !important;
+    color: #ffffff !important;
+}
+
 .navbar{
     padding-top: 0;
     padding-bottom: 0;

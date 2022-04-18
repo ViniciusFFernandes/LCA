@@ -13,8 +13,11 @@
 			$headers = array();
             $headers[] = "Content-Type: application/json";
             $headers[] = "Authorization: Bearer " . $_SESSION['jwt'];
+            //
+            $parameters = array();
+            $parameters['populate'] = '*';
 			//
-            $url = API . '/posts';
+            $url = API . "/posts?" . http_build_query($parameters);
             //
             ob_start();
 			//
@@ -42,8 +45,11 @@
 			$headers = array();
             $headers[] = "Content-Type: application/json";
             $headers[] = "Authorization: Bearer " . $_SESSION['jwt'];
+            //
+            $parameters = array();
+            $parameters['populate'] = '*';
 			//
-            $url = API . "/posts/{$id_cadastro}";
+            $url = API . "/posts/{$id_cadastro}?" . http_build_query($parameters);
             //
             ob_start();
 			//
@@ -71,11 +77,15 @@
             if($postNumero <= 2){
                 $tamanhoDiv = "col-lg-6 col-md-6 col-sm-6";
             }
+            if($postNumero > 5){
+                $tamanhoDiv = ' d-none ';
+            }
             $html = file_get_contents("_Blog/_HTML/componentes/postMini.html");
             //
             $html = str_replace("##tituloPost##", $dados->attributes->titulo, $html);
             $html = str_replace("##tamnhoDiv##", $tamanhoDiv, $html);
 			$html = str_replace("##idPost##", $dados->id, $html);
+			$html = str_replace("##imgPost##", $dados->attributes->banner->data->attributes->url, $html);
 			$html = str_replace("##dataPublicacao##", $this->util->convertDataAPI($dados->attributes->publishedAt, false), $html);
             //
             return $html;
