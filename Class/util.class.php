@@ -2,6 +2,14 @@
 
 class Util{
 
+	public function nulo($string){
+		if ($string == "") {
+          	return NULL;
+        }else{
+			return $string;
+        }
+	}
+
 	public function sgr($string, $retornaNull = false){
 		if ($string != "") {
 			$string = str_replace("'", "''", $string);

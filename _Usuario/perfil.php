@@ -1,14 +1,18 @@
 <?php
   require_once("_BD/conecta_login.php");
-  require_once("usuarios.class.php");
-  //
-  $usuarios = new usuarios();
+  require_once("plano.class.php");
   //
   $dadosUser = $usuarios->buscarUsuario();
-  // echo "<pre>";
-  // print_r($dadosUser);
-  // echo "</pre>";
-  // exit;
+  //
+  $plano = new plano();
+  $assinaturas = $plano->buscarAssinaturas($dadosUser->id);
+  //
+   //
+   $htmlAssinaturas = '';
+   //
+   foreach($assinaturas->data AS $assinaturaDados){
+     $htmlAssinaturas .= $plano->geraListaAssinatura($assinaturaDados);
+   }
   //
   if (isset($_SESSION['mensagem'])) {
     $msg = $html->mostraMensagem($_SESSION['tipoMsg'], $_SESSION['mensagem']);
@@ -32,6 +36,8 @@
   $html = str_replace("##email##", $dadosUser->attributes->users_permissions_user->data->attributes->email, $html);
   $html = str_replace("##numeroMembro##", $dadosUser->id, $html);
   $html = str_replace("##idcliente##", $dadosUser->id, $html);
+  $html = str_replace("##idcliente_iugu##", $dadosUser->attributes->id_iugu, $html);
+  $html = str_replace("##listaDeAssinaturas##", $htmlAssinaturas, $html);
   echo $html;
   exit;
 ?>

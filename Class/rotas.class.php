@@ -18,6 +18,14 @@
 		require_once("_Usuario/perfil.php");
 	});
 
+	$route->get('/planos/', function() {
+		require_once("_Planos/planos.php");
+	});
+
+	$route->get('/webhookiugu/', function() {
+		require_once("_Planos/webhook_iugu.php");
+	});
+
 	$route->group(['prefix' => '/blog'], function($route) {
 		$route->get('/', function() {
 			require_once("_Blog/blog.php");

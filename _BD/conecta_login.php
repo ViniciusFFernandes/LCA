@@ -51,7 +51,7 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['logado'] = false;
 		$_SESSION['mensagem'] = "Usuario ou senha incorretos!!!<br>Tente novamente";
     	$_SESSION['tipoMsg'] = "danger";
-		header('location: index.php');
+		header('location: ../index.php');
 		exit;
 	}
 }
@@ -66,7 +66,7 @@ if($_POST['operacao'] == 'novaConta'){
 	if(!empty($dados->jwt)){
 		$_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
     	$_SESSION['tipoMsg'] = "succes";
-		header('location: index.php');
+		header('location: ../index.php');
 		exit;
 	}else{
 		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";
@@ -84,11 +84,4 @@ if ($_POST['operacao'] == "Sair") {
 	exit;
 }
 
-// //
-// //Verifica se o ususario pode acessar a pagina atual
-// $usuarios = new Usuarios($db, $util, $_SESSION['idusuario'], $_SESSION['idgrupos_acessos']);
-// if(!$usuarios->usuario_pode_executar()){
-// 	$html->mostraErro("Você não tem permissão para executar este programa!<br>Consulte um administrador do sistema!<br> Programa: " . basename($_SERVER['PHP_SELF']));
-// 	exit;
-// }
 ?>

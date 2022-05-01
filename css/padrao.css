@@ -8,6 +8,10 @@
     height: 100%;
 }
 
+.divPost{
+    cursor: pointer;
+}
+
 .cardLogin{
     background-color: white;
     border-top-left-radius: 15px;
@@ -300,6 +304,37 @@
 
 .link-usuario:hover{
     color: white !important;
+}
+
+.divPlano{
+    background-color: white;
+    border-radius: 5px;
+    /* border: 10px solid #EE0000; */
+}
+
+.tituloPlano{
+    color: #8d0000;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.valorPlano{
+    color: #EE0000;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 15px;
+}
+
+.duracaoPlano{
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+.descricaoPlano{
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 25px;
 }
 
 @media (max-width:575px){
