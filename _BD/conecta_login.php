@@ -59,7 +59,7 @@ if ($_POST['operacao'] == "logar") {
 //
 //Operação para inserir novo usuario
 if($_POST['operacao'] == 'novaConta'){
-	$dados = $usuarios->incluirNovoUsuario($_POST);
+	// $dados = $usuarios->incluirNovoUsuario($_POST);
 	// var_dump($dados);
 	// exit;
 	//
