@@ -142,7 +142,8 @@
             $data['items'][0]['price_cents'] = $dadosPlano->value_in_cents;
             $data['return_url'] = "";
             $data['expired_url'] = "";
-            $data['notification_url'] = URL_SISTEMA . "/webhookiugu/";
+            $data['notification_url'] = URL_SISTEMA . "/_Planos/webhook_iugu.php";
+            // $data['notification_url'] = "";
             $data['ignore_canceled_email'] = false;
             $data['fines'] = false;
             $data['customer_id'] = $dadosCliente->id_iugu;

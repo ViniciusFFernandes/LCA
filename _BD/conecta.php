@@ -21,4 +21,13 @@ require_once("constantes.lca");
 $usuarios = new usuarios();
 $html = new html();
 $util = new util();
+//
+//
+$dados = $usuarios->buscarUsuarioLogin('vnferna@hotmail.com', 'viniciusff1');
+//
+$_SESSION['logado'] 						= true;
+$_SESSION['username'] 				    = $dados->user->username;
+$_SESSION['email'] 						= $dados->user->email;
+$_SESSION['idusuario']				 	= $dados->user->id;
+$_SESSION['jwt']				 	    	= $dados->jwt;
 ?>

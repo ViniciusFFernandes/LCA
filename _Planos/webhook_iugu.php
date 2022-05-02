@@ -15,13 +15,12 @@
     $status['in_protest'] = 'Em Protesto';
     $status['chargeback'] = 'Contestada';
     //
+    // 
     if($_REQUEST['event'] == 'invoice.status_changed'){
-        if($_REQUEST['data[id]'] != ''){
+        if($_REQUEST['data']['id'] != ''){
             $plano = new plano();
-            $dadosAssinatura = $plano->buscarAssinatura($_REQUEST['data[id]']);
-            $plano->atualizaAssinatura($dadosAssinatura->id, $_REQUEST['data[id]'], $status[$_POST['data[status]']]);
+            $dadosAssinatura = $plano->buscarAssinatura($_REQUEST['data']['id']);
+            $plano->atualizaAssinatura($dadosAssinatura->id, $_REQUEST['data']['id'], $status[$_REQUEST['data']['status']]);
         }
     }
-    //
-}
 ?>
