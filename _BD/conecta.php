@@ -23,7 +23,7 @@ $html = new html();
 $util = new util();
 //
 //
-$dados = $usuarios->buscarUsuarioLogin('vnferna@hotmail.com', 'viniciusff1');
+$dados = $usuarios->buscarUsuarioLogin(USER_PADRAO_USUARIO, USER_PADRAO_SERNHA);
 //
 $_SESSION['logado'] 						= true;
 $_SESSION['username'] 				    = $dados->user->username;
