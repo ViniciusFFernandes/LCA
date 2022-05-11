@@ -21,9 +21,6 @@ require_once("constantes.lca");
 if (!isset($_POST['operacao'])) {
 	$_POST['operacao'] = null;
 }
-if (!isset($_SESSION['logado'])) {
-	$_SESSION['logado'] = null;
-}
 //
 //inicia as classes nescessarias
 $usuarios = new usuarios();
@@ -82,4 +79,9 @@ if ($_POST['operacao'] == "Sair") {
 	exit;
 }
 
+// if (!isset($_SESSION['logado'])) {
+// 	session_destroy();
+// 	header('Location: ../index.php');
+// 	exit;
+// }
 ?>

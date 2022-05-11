@@ -46,6 +46,12 @@
             $data['email'] = $dados['email'];
             $data['name'] = $dados['nome'];
             $data['cpf_cnpj'] = $dados['cpf'];
+            $data['street'] = $this->util->nulo($dados['rua']);
+            $data['number'] = $this->util->nulo($dados['numero']);
+            $data['district'] = $this->util->nulo($dados['bairro']);
+            $data['city'] = $this->util->nulo($dados['cidade']);
+            $data['state'] = $this->util->nulo($dados['estado']);
+            $data['zip_code'] = $this->util->nulo($dados['cep']);
             //
             $headers = array();
             $headers[] = "Accept: application/json";

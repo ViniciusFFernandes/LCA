@@ -17,7 +17,7 @@
             $headers[] = "Content-Type: application/json";
 			//
 			$dados = array();
-			$dados['identifier'] = $usuario;
+			$dados['identifier'] = str_replace("-", "", str_replace(".", "", $usuario));
 			$dados['password'] = $senha;
 			//
             $url = API . '/auth/local';
@@ -101,7 +101,7 @@
             $headers[] = "Content-Type: application/json";
             //
             $dados = array();
-            $dados['username'] = $data['nome'];
+            $dados['username'] = str_replace("-", "", str_replace(".", "", $data['cpf']));
             $dados['email'] = $data['email'];
             $dados['password'] = $data['senha'];
             //
@@ -126,7 +126,6 @@
             ob_end_clean();
             curl_close($ch);
             //
-            var_dump($resposta);
             //
             if(!empty($resposta->jwt)){
                 self::incluiCliente($data, $idClienteiugu, $resposta->jwt, $resposta->user->id);

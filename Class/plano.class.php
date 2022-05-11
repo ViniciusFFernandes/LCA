@@ -177,6 +177,7 @@
             //
             $parameters = array();
             $parameters['populate'] = '*';
+            $parameters['sort'] = 'date_buy:desc';
             $parameters['filters']['client'] = $idcliente;
             //
             $url = API . "/subscriptions?" . http_build_query($parameters);
@@ -200,6 +201,40 @@
             curl_close($ch);
             //
             return $resposta;
+        }
+
+        public function buscarUltimaAssinaturaPaga($idcliente){
+            $headers = array();
+            $headers[] = "Content-Type: application/json";
+            $headers[] = "Authorization: Bearer " . $_SESSION['jwt'];
+            //
+            $parameters = array();
+            $parameters['populate'] = '*';
+            $parameters['sort'] = 'date_buy:desc';
+            $parameters['filters']['client'] = $idcliente;
+            $parameters['filters']['status'] = 'Paga';
+            //
+            $url = API . "/subscriptions?" . http_build_query($parameters);
+            //
+            ob_start();
+            //
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_exec($ch);
+            //
+            // JSON de retorno  
+            $resposta = json_decode(ob_get_contents());
+            // $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            // $erro = curl_errno($ch);
+            // $info = curl_getinfo($ch);
+            //
+            ob_end_clean();
+            curl_close($ch);
+            //
+            return $resposta->data[0];
         }
 
         public function buscarAssinatura($idiugu = '', $idassinatura = ''){

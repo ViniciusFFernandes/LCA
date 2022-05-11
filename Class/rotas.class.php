@@ -21,6 +21,10 @@
 	$route->get('/planos/', function() {
 		require_once("_Planos/planos.php");
 	});
+	
+	$route->get('/permissao/', function() {
+		require_once("_Usuario/valida_permissao.php");
+	});
 
 	$route->group(['prefix' => '/blog'], function($route) {
 		$route->get('/', function() {
