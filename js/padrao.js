@@ -2,29 +2,6 @@ function deslogarConta(){
     postFormulario('../_BD/conecta_login.php', {operacao: 'Sair'});
 }
 
-function inserirUsuario(){
-    if($("#nome").val() == ''){
-        alert('Nome não informado!');
-        return;
-    }
-    //
-    if($("#email").val() == ''){
-        alert('E-mail não informado!');
-        return;
-    }
-    //
-    if($("#senha").val() == ''){
-        alert('Senha não informada!');
-        return;
-    }
-    //
-    if($("#senha").val() != $("#senha2").val()){
-        alert('As senhas não conferem!');
-        return;
-    }
-    //
-    $("#formNovoUsuario").submit();
-}
 
 function toFloat(string){
     var valor = '';
