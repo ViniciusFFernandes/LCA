@@ -1,0 +1,89 @@
+main {
+  background-color: #333;
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.page > .post {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  height: 300px;
+  margin-bottom: 32px;
+  border-radius: 32px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.page > .post:hover {
+  transform: scale(1.01);
+}
+
+.page > .post:nth-child(1) {
+  margin-top: 32px;
+}
+
+.page > .post:nth-child(6n+1) {
+  width: 100%;
+}
+
+.page > .post:nth-child(6n+2),
+.page > .post:nth-child(6n+3),
+.page > .post:nth-child(6n+4) {
+  width: calc(33% - 32px);
+}
+
+.page > .post:nth-child(6n+5),
+.page > .post:nth-child(6n+6) {
+  width: calc(50% - 32px);
+}
+
+.page > .post > img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page > .post > .info {
+  width: 50%;
+}
+
+.page > .post > .info > .title {
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.page > .post > .info > .date {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .page > .post:nth-child(n) {
+    width: calc(50% - 32px);
+    margin: 0;
+  }
+
+  .page {
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .page > .post:nth-child(n) {
+    width: 100%;
+  }
+}

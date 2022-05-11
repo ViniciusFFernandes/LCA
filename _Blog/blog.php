@@ -16,11 +16,8 @@
   //
   $htmlPosts = '';
   //
-  $i = 1;
-  //
   foreach($posts->data AS $post){
-    $htmlPosts .= $blog->geraPost($post, $i);
-    $i++;
+    $htmlPosts .= $blog->geraPost($post);
   }
   //
   if (isset($_SESSION['mensagem'])) {

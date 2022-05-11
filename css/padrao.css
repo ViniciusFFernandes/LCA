@@ -1,3 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+    overflow-y: overlay;
+    overflow-x: hidden;
+    accent-color: #ee0000;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #0f0f0f;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: black;
+    border-radius: 20px;
+}
+
+html,
+body {
+    width: 100%;
+    font-family: Roboto, sans-serif;
+}
+
+.header {
+    height: 80px;
+    width: 100vw;
+    background-color: #313131;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.header > .header-navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.header > .header-navbar > ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    height: 100%;
+    line-height: 100%;
+    margin: 0;
+}
+
+.header > .header-navbar ul > li {
+    font-weight: bold;
+    color: white !important;
+    cursor: pointer;
+    height: 100%;
+    line-height: 77px;
+}
+
+.header > .header-navbar ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+
+.header > .header-navbar ul > li.active {
+    border-bottom: 3px solid #ee0000;
+}
+
 .bodyLogin{
     background-color: #EE0000;
     height: 100%;

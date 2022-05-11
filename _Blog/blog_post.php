@@ -24,7 +24,7 @@
   //Abre o arquivo html e Inclui mensagens e trechos php
   $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
-  $html = str_replace("##tituloPost##", $post->data->attributes->titulo, $html);
+  $html = str_replace("##tituloPost##", $post->data->attributes->title, $html);
   $html = str_replace("##conteudoPost##", $conversorMark->text($post->data->attributes->content), $html);
   $html = str_replace("##imgPost##", $post->data->attributes->banner->data->attributes->url, $html);
   $html = str_replace("##dataPublicacao##", $util->convertDataAPI($post->data->attributes->publishedAt), $html);

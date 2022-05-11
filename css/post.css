@@ -1,0 +1,38 @@
+main {
+  margin-top: 80px;
+  background-color: #333;
+}
+
+main > div.post {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  color: white;
+}
+
+main > div.post > .title-post {
+  font-size: 4rem;
+  text-align: center;
+  margin: 64px 0;
+}
+
+main > div.post > div.info-post{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #ddd;
+  margin-bottom: 16px;
+  padding: 0px 16px;
+}
+
+main > div.post > img.banner-post {
+  max-height: 50vh;
+  width: 100%;
+  border-radius: 2vh;
+  object-fit: cover;
+  margin-bottom: 64px;
+}
+
+main > div.post > .content {
+  font-weight: 300;
+}
