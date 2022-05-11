@@ -25,9 +25,9 @@ $util = new util();
 //
 $dados = $usuarios->buscarUsuarioLogin(USER_PADRAO_USUARIO, USER_PADRAO_SERNHA);
 //
-$_SESSION['logado'] 						= true;
-$_SESSION['username'] 				    = $dados->user->username;
-$_SESSION['email'] 						= $dados->user->email;
-$_SESSION['idusuario']				 	= $dados->user->id;
-$_SESSION['jwt']				 	    	= $dados->jwt;
+$_SESSION['logado'] 				= true;
+$_SESSION['username'] 				= $dados->user->username;
+$_SESSION['email'] 					= $dados->user->email;
+$_SESSION['idusuario']				= $dados->user->id;
+$_SESSION['jwt']				 	= $dados->jwt;
 ?>

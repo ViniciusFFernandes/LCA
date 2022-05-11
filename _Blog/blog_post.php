@@ -1,5 +1,6 @@
 <?php
   require_once("_BD/conecta_login.php");
+  require_once("valida_permissao_usuario.php");
   require_once("blog.class.php");
   //
   $blog = new blog();
