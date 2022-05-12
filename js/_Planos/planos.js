@@ -16,6 +16,6 @@ function contratarPlano(idplano){
 }
 
 function logarCriaConta(urlCripto){
-    alert("Para fazer assinatura de um plano você precisa estar logado\nCrie uma conta agora!");
+    alert("Você precisa estar logado para assinar um plano!\nRedirecionando para ciração de conta...");
     window.location.assign("../cadastrar?redirect=" + urlCripto);
 }

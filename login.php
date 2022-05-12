@@ -22,11 +22,14 @@
     $msg = $html->mostraMensagem($_SESSION['tipoMsg'], $_SESSION['mensagem']);
     unset($_SESSION['mensagem'], $_SESSION['tipoMsg']);
   }
+  $redirectCadastro = '';
+  if(!empty($_REQUEST['redirect'])) $redirectCadastro = '?redirect=' . $_REQUEST['redirect'];
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
   $html = file_get_contents('login.html');
   $html = str_replace("##Mensagem##", $msg, $html);
   $html = str_replace("##redirect##", $_REQUEST['redirect'], $html);
+  $html = str_replace("##redirectCadastrar##", $redirectCadastro, $html);
   echo $html;
   exit;
 ?>
