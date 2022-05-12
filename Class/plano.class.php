@@ -82,6 +82,11 @@
             $html = str_replace("##valorPlano##", $this->util->formataMoeda($dados->attributes->value_in_cents / 100), $html);
 			$html = str_replace("##duracaoPlano##", $dados->attributes->duration_in_months, $html);
 			$html = str_replace("##descricaoPlano##", $dados->attributes->description, $html);
+            if($_SESSION['logado']){
+                $html = str_replace("##functionBtnAssinar##", "contratarPlano(##id##)", $html);
+            }else{
+                $html = str_replace("##functionBtnAssinar##", "logarCriaConta('" . base64_encode("planos/") . "')", $html);
+            }
 			$html = str_replace("##id##", $dados->id, $html);
             //
             return $html;

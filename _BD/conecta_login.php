@@ -42,7 +42,12 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['email'] 							= $dados->user->email;
 		$_SESSION['idusuario']				 	    = $dados->user->id;
 		$_SESSION['jwt']				 	    	= $dados->jwt;
-		header('Location: ../blog/');
+		//
+		if($_REQUEST['redirect'] != ""){
+			header('Location: ../' . base64_decode($_REQUEST['redirect']));
+		}else{
+			header('Location: ../blog/');
+		}
 		exit;
 	}else{
 		$_SESSION['logado'] = false;
@@ -61,7 +66,19 @@ if($_POST['operacao'] == 'novaConta'){
 	if(!empty($dados->jwt)){
 		$_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
     	$_SESSION['tipoMsg'] = "succes";
-		header('location: ../index.php');
+		if($_REQUEST['redirect'] != ""){
+			$dados = $usuarios->buscarUsuarioLogin($_POST['cpf'], $_POST['senha']);
+			//
+			$_SESSION['logado'] 						= true;
+			$_SESSION['username'] 						= $dados->user->username;
+			$_SESSION['email'] 							= $dados->user->email;
+			$_SESSION['idusuario']				 	    = $dados->user->id;
+			$_SESSION['jwt']				 	    	= $dados->jwt;
+			//
+			header('Location: ../' . base64_decode($_REQUEST['redirect']));
+		}else{
+			header('location: ../index.php');
+		}
 		exit;
 	}else{
 		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";

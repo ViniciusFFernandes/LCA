@@ -22,6 +22,7 @@
                     <form class="alinhaCentro" action="_BD/conecta_login.php" method="POST" id="formNovoUsuario">
                         <center><img src="img/logo.png" class="img-fluid" width="40%"></center>
                         <input type="hidden" id="operacao" name="operacao" value="novaConta">
+                        <input type="hidden" id="redirect" name="redirect" value="##redirect##">
                         <div class="form-group">
                             <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome" autofocus>
                         </div>
@@ -56,7 +57,7 @@
                             <input class="form-control" type="password" id="senha2" name="senha2" placeholder="Repita Senha">
                         </div>
                         <center class="pb-3"><button class="btn btnRedLogin" type="button" onclick="inserirUsuario()">CRIAR CONTA</button></center>
-                        <center><a href="#" class="link" onclick="window.history.back();">FAZER LOGIN</a></center>
+                        <center><a href="#" class="link" onclick="direciona('##linkLogin##')">FAZER LOGIN</a></center>
                     </form>
                 </div>
             </div>
