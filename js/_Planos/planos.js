@@ -16,6 +16,20 @@ function contratarPlano(idplano){
 }
 
 function logarCriaConta(urlCripto){
-    alert("Você precisa estar logado para assinar um plano!\nRedirecionando para ciração de conta...");
-    window.location.assign("../cadastrar?redirect=" + urlCripto);
+    swal({
+        title: "Você não está logado",
+        text: "Crie uma conta ou entre com sua conta",
+        icon: "error",
+        buttons: {
+            cancel: "Nova Conta",
+            defeat: "Logar",
+        },
+      }).then((value) => {
+        if(value){
+            window.location.assign("../?redirect=" + urlCripto);
+        }else{
+            window.location.assign("../cadastrar?redirect=" + urlCripto);
+        }
+      });
+    
 }
