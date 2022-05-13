@@ -5,8 +5,6 @@
     outline: none;
     scrollbar-width: thin;
     scrollbar-color: black transparent;
-    overflow-y: overlay;
-    overflow-x: hidden;
     accent-color: #ee0000;
 }
 
@@ -33,6 +31,8 @@ html,
 body {
     width: 100%;
     font-family: Roboto, sans-serif;
+    overflow-y: overlay;
+    overflow-x: hidden;
 }
 
 .header {
@@ -79,6 +79,48 @@ body {
 
 .header > .header-navbar ul > li.active {
     border-bottom: 3px solid #ee0000;
+}
+
+.header > .header-navbar ul > li > .btn-close-menu,
+.header > .header-navbar ul > li > .btn-open-menu {
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .header > .header-navbar {
+        z-index: 10;
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+        background-color: #313131;
+        transition: all 0.3s ease-in;
+    }
+
+    .header > .header-navbar > ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header > .header-navbar > ul > li {
+        height: auto;
+        font-size: 3rem;
+        line-height: normal;
+    }
+
+    .header > .header-navbar ul > li > .btn-open-menu {
+        display: block;
+    }
 }
 
 .bodyLogin{

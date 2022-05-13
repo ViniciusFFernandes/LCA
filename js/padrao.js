@@ -51,3 +51,15 @@ function postFormulario(path, params, method, target) {
     document.body.appendChild(form);
     form.submit();
   }
+
+function closeMenu() {
+    $("#header-navbar").css("top", "-100vh");
+    $("#btn-close-menu").css("display", "none");
+    $("#btn-open-menu").css("display", "block");
+}
+
+function openMenu() {
+    $("#header-navbar").css("top", "0");
+    $("#btn-close-menu").css("display", "block");
+    $("#btn-open-menu").css("display", "none");
+}

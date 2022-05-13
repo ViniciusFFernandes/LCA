@@ -4,18 +4,7 @@
     src="http://aligaclassea.com.br/wp-content/uploads/2021/06/logo-liga-classe-a-negativo.png"
     height="40px"
   />
-  <nav class="header-navbar">
-    <!-- <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Alterna navegação"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
+  <nav id="header-navbar" class="header-navbar">
     <ul>
       <li>
         <a href="../blog/">BLOG</a>
@@ -26,7 +15,23 @@
       <li>
         <a href="../planos/">PLANOS</a>
       </li>
+      <li>
+        <a href="../perfil/">PERFIL</a>
+      </li>
+      <li>
+        <button
+          id="btn-close-menu"
+          class="btn-close-menu"
+          onclick="closeMenu()"
+        >
+          X
+        </button>
+      </li>
+      <li>
+        <button id="btn-open-menu" class="btn-open-menu" onclick="openMenu()">
+          -
+        </button>
+      </li>
     </ul>
-    <!-- ##MinhaConta## -->
   </nav>
 </header>
