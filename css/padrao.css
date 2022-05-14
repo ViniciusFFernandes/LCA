@@ -85,7 +85,7 @@ body {
 .header > .header-navbar ul > li > .btn-open-menu {
     display: none;
     position: fixed;
-    top: 10px;
+    top: 22px;
     right: 40px;
     background-color: transparent;
     border: none;
@@ -120,6 +120,10 @@ body {
 
     .header > .header-navbar ul > li > .btn-open-menu {
         display: block;
+    }
+
+    .header > .header-navbar > ul > li.btn {
+        font-size: 1rem;
     }
 }
 
@@ -165,9 +169,7 @@ body {
 }
 
 .btnRedLogin:hover{
-    background-color: white;
-    color: #EE0000;
-    border-color: #EE0000;
+    filter: brightness(0.9);
 }
 
 .btnRed{
@@ -175,81 +177,27 @@ body {
     color: white;
     font-weight: bold;
     /* width: 100%; */
-    border-radius: 20px;
-    padding: 10px 30px !important;
+    border-radius: 8px;
+    padding: 0px 30px !important;
+    margin: 20px;
 }
 
 .btnRed:hover{
-    background-color: white;
-    color: #EE0000;
-    border-color: #EE0000;
+    filter: brightness(0.9);
 }
 
 .btnCinza{
     background-color: #b8b8b8;
-    color: rgb(0, 0, 0);
+    color: white;
     font-weight: bold;
     /* width: 100%; */
-    border-radius: 20px;
-    padding: 10px 30px !important;
-}
-
-.divCarteirinha{
-    background-image: url("../img/fundoCarteirinha.png");
-    background-size: 550px;
-    background-repeat: no-repeat;
-    width: 550px;
-    height: 308px;
-    border-radius: 15px;
-}
-
-.nomeCarteirinha{
-    position: relative;
-    left: -130px; 
-    top: 100px;
-    color: white;
-    font-weight: bold;
-    width: 250px;
-}
-
-.cpfCarteirinha{
-    position: relative;
-    left: -130px; 
-    top: 98px;
-    color: white;
-    font-weight: bold;
-    font-size: 13px;
-    width: 250px;
-}
-
-.numeroCarteirinha{
-    position: relative;
-    left: -130px; 
-    top: 230px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    width: 250px;
-}
-
-.validadeCarteirinha{
-    position: relative;
-    left: 135px;
-    top: 195px;
-    color: white;
-    font-weight: bold;
-    font-size: 8px;
-    width: 250px;
-}
-
-.dataCarteirinha{
-    font-size: 12px;
+    border-radius: 8px;
+    padding: 0px 30px !important;
+    margin: 20px;
 }
 
 .btnCinza:hover{
-    background-color: white;
-    border-color: #b8b8b8;
-    color: #b8b8b8;
+    filter: brightness(0.9);
 }
 
 .link{
@@ -259,45 +207,6 @@ body {
 
 .link:hover{
     color: #EE0000;
-}
-
-.imgLogoBlog{
-    position: relative;
-    top: -60px !important;
-}
-
-.divCinza{
-    position: absolute;
-    top: 140px !important;
-    left: 5% !important;
-    background-color: #adadad;
-    height: 200px;
-    width: 90%;
-    z-index: -9998;
-}
-
-.divCinzaParceiros{
-    position: relative;
-    top: 180px !important;
-    background-color: #adadad;
-    height: 200px;
-    width: 100%;
-    z-index: -9998;
-}
-
-.divCinzaUsuario{
-    position: absolute;
-    top: 140px !important;
-    left: 5% !important;
-    background-color: #adadad;
-    height: 130px;
-    width: 90%;
-    z-index: -9998;
-}
-
-.parceiros_area{
-    background-color: #adadad;
-    z-index: -9999;
 }
 
 .divVermelha{
@@ -340,24 +249,6 @@ body {
     font-size: 30px;
 }
 
-.divParceiros{
-    padding-top: 4rem;
-    /* padding-bottom: 1.4rem; */
-    width: 100%;
-    z-index: -9997;
-}
-
-.divDadosPost{
-    font-weight: bold;
-    color: #8d0000;
-    font: 15px;
-}
-
-.divDescricaoPost{
-    font-size: 18px;
-    color: rgb(24, 24, 24);
-}
-
 .nav-link{
     font-weight: bold !important; 
     color: rgb(24, 24, 24) !important;
@@ -366,36 +257,6 @@ body {
 .nav-link:hover{
     font-weight: bold !important;
     color: #EE0000 !important;
-}
-
-.dropdown-item{
-    font-weight: bold !important;
-    color: rgb(24, 24, 24) !important;
-}
-
-.dropdown-item:hover{
-    color: #EE0000 !important;
-}
-
-.dropdown-item:active{
-    background-color: #EE0000 !important;
-    color: #ffffff !important;
-}
-
-.navbar{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.navbar{
-    -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.77);
-    -moz-box-shadow:    0px 2px 3px rgba(50, 50, 50, 0.77);
-    box-shadow:         0px 2px 3px rgba(50, 50, 50, 0.77);
-    
-}
-
-.header_area{
-    margin-bottom: 100px;
 }
 
 .collapse{
@@ -409,10 +270,6 @@ body {
     top: -6px;
     width: 100%;
     padding-right: 5px;
-}
-
-.usuario_area{
-    padding-top: 4rem !important;
 }
 
 .link-usuario.active{
@@ -429,37 +286,6 @@ body {
 
 .link-usuario:hover{
     color: white !important;
-}
-
-.divPlano{
-    background-color: white;
-    border-radius: 5px;
-    /* border: 10px solid #EE0000; */
-}
-
-.tituloPlano{
-    color: #8d0000;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.valorPlano{
-    color: #EE0000;
-    font-weight: bold;
-    font-size: 25px;
-    padding-top: 15px;
-}
-
-.duracaoPlano{
-    font-weight: bold;
-    font-size: 15px;
-    padding-top: 15px;
-}
-
-.descricaoPlano{
-    font-weight: bold;
-    font-size: 12px;
-    padding-bottom: 25px;
 }
 
 @media (max-width:575px){
@@ -480,46 +306,4 @@ body {
     .divVermelha{
         top: 220px !important;
     }
-}
-
-@media (max-width:650px){
-    .divCarteirinha{
-        background-size: 400px;
-        width: 400px;
-        height: 225px;
-        border-radius: 15px;
-    }
-    
-    .nomeCarteirinha{
-        left: -89px; 
-        top: 70px;
-        width: 200px;
-        font-size: 13px;
-    }
-    
-    .cpfCarteirinha{
-        left: -89px; 
-        top: 70px;
-        width: 200px;
-        font-size: 9px;
-    }
-    
-    .numeroCarteirinha{
-        left: -89px; 
-        top: 160px;
-        width: 200px;
-        font-size: 14px;
-    }
-    
-    .validadeCarteirinha{
-        left: 65px;
-        top: 137px;
-        width: 250px;
-        font-size: 6px;
-    }
-
-    .dataCarteirinha{
-        font-size: 9px;
-    }
-    
 }

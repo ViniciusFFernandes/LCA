@@ -1,0 +1,141 @@
+main.container-user {
+  background-color: #333;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+main.container-user > .user {
+  display: grid;
+  place-items: center;
+}
+
+main.container-user > .user > .user-name {
+  color: white;
+  font-weight: bold;
+  padding: 20px 0px;
+  font-size: 2rem;
+}
+
+main.container-user > div > ul.nav.nav-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+}
+
+main.container-user > div > ul.nav.nav-tabs > .nav-item > .nav-link {
+  border-radius: 0.25rem;
+}
+
+div.container-sair {
+  display: grid;
+  place-items: center;
+}
+
+#conta > div.container-conta {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#conta > div.container-conta > div {
+  width: calc(50% - 32px);
+  min-width: 300px;
+}
+
+#conta > div.container-conta > div > form {
+  color: white;
+}
+
+#conta > div.container-conta > div > form > .form-group {
+  width: 100%;
+}
+
+#conta > div.container-conta > div > form input {
+  width: 100%;
+}
+
+.container-carteirinha {
+  display: grid;
+  place-items: center;
+  padding-top: 40px;
+}
+
+.divCarteirinha{
+  background-image: url("../img/fundoCarteirinha.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 550px;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.container-info-carteirinha {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nomeCarteirinha{
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.cpfCarteirinha, 
+.numeroCarteirinha {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  main.container-user > div > ul.nav.nav-tabs {
+    gap: 0px;
+  }
+
+  main.container-user > div > ul.nav.nav-tabs > .nav-item > .nav-link {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  main.container-user > .user > .user-name {
+    font-size: 1.5rem;
+  }
+
+  .divCarteirinha{
+    width: 90%;
+    padding: 10px 20px;
+  }
+
+  .nomeCarteirinha{
+    font-size: 18px;
+  }
+  
+  .cpfCarteirinha,
+  .numeroCarteirinha {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  main.container-user > div > ul.nav.nav-tabs {
+    gap: 0px;
+  }
+
+  main.container-user > div > ul.nav.nav-tabs > .nav-item > .nav-link {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}

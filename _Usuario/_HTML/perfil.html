@@ -1,192 +1,270 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="../img/favicon.png" type="image/png">
-        <title>Liga Classe A</title>
-        ##includes##
-        <script src="../js/_Usuario/perfil.js"></script>
-    </head>
-    <body>
-        
-        <!--================Header Menu Area =================-->
-        <header class="header_area">
-            ##Menu##
-        </header>
-        
-        <!--================Usuario Area =================-->
-        <div class="divCinzaUsuario" align="center">
-            <img src="../img/logoSimbulo.png" class="img-fluid imgLogoBlog" width="120px">
-            <div class="membroNumero" align="right">Membro LCA ###numeroMembro##</div>
-        </div>
-        <div class="divVermelhaUsuario"></div>
-        <div class="divUsuario" >
-            <img src="../img/usuario.png" class="rounded-circle" width="120px">
-            <span class="nomeUsuario">##nome##</span>
-        </div>
-        <section class="usuario_area">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block"></div>
-              <div class="col-lg-10 col-md-10 col-sm-10 col-12">
-                <ul class="nav nav-tabs">
-                  <li class="nav-item">
-                    <a class="nav-link link-usuario active" data-toggle="tab" href="#conta">Minha Conta</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-usuario" data-toggle="tab" href="#banco">Dados Bancários</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-usuario" data-toggle="tab" href="#assinatura">Assinaturas</a>
-                  </li>
-                </ul>
-                  
-                  <!-- Tab panes -->
-                <div class="tab-content">
-                  <div id="conta" class="tab-pane active">
-                    <div class="row pt-5 pb-5">
-                      <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                        <form action="#" method="POST" >
-                          <input type="hidden" name="idcliente" id="idcliente" value="##idcliente##">
-                          <input type="hidden" name="idcliente_iugu" id="idcliente_iugu" value="##idcliente_iugu##">
-                          <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                              <div class="form-group">
-                                <label for="nome"><b>Nome</b></label>
-                                <input readonly class="form-control" type="text" id="nome" name="nome" value="##nome##">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                              <div class="form-group">
-                                <label for="apelido"><b>Apelido</b></label>
-                                <input readonly class="form-control" type="text" id="apelido" name="apelido" value="##apelido##">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                              <div class="form-group">
-                                <label for="email"><b>Email</b></label>
-                                <input readonly class="form-control" type="text" id="email" name="email" value="##email##">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="cpf"><b>CPF</b></label>
-                                <input readonly class="form-control" type="text" id="cpf" name="cpf" value="##cpf##">
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="rg"><b>RG</b></label>
-                                <input readonly class="form-control" type="text" id="rg" name="rg" value="##rg##">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="rua"><b>Rua</b></label>
-                                <input readonly class="form-control" type="text" id="rua" name="rua" value="##rua##">
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="numero"><b>Numero</b></label>
-                                <input readonly class="form-control" type="text" id="numero" name="numero" value="##numero##">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="cidade"><b>Cidade</b></label>
-                                <input readonly class="form-control" type="text" id="cidade" name="cidade" value="##cidade##">
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="bairro"><b>Bairro</b></label>
-                                <input readonly class="form-control" type="text" id="bairro" name="bairro" value="##bairro##">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="estado"><b>Estado</b></label>
-                                <input readonly class="form-control" type="text" id="estado" name="estado" value="##estado##">
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                              <div class="form-group">
-                                <label for="cep"><b>CEP</b></label>
-                                <input readonly class="form-control" type="text" id="cep" name="cep" value="##cep##">
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                        <div class="row pb-3">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-12 p-0" align="center">
-                            <div class="divCarteirinha">
-                              <div class="nomeCarteirinha" align="left">##nome##</div>
-                              <div class="cpfCarteirinha" align="left">##cpf##</div>
-                              <div class="numeroCarteirinha" align="left">###numeroMembro##</div>
-                              <div class="validadeCarteirinha" align="right">Válido até <br> <span class="dataCarteirinha">##validade##</span></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row d-none">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-12 pb-3" align="center">
-                            <button type="button" class="btn btnRed">Salvar como PDF</button>
-                          </div>
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-12" align="center">
-                            <button type="button" class="btn btnCinza">Imprimir</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12" align="center">
-                        <button type="button" class="btn btnCinza" id="btnEditarPerfil" onclick="editarPerfil()">Editar</button>
-                        <button type="button" class="btn btnRed" id="btnSalvarPerfil" style="display: none;" onclick="salvarPerfil()">Salvar</button>
-                      </div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="../img/favicon.png" type="image/png" />
+    <title>Liga Classe A</title>
+    ##includes##
+    <script src="../js/_Usuario/perfil.js"></script>
+    <link rel="stylesheet" href="../css/perfil.css" />
+  </head>
+  <body>
+    <!--================Header Menu Area =================-->
+    ##Menu##
+
+    <!--================Usuario Area =================-->
+    <!-- <div class="membroNumero" align="right">Membro LCA ###numeroMembro##</div> -->
+    <!-- <div class="divVermelhaUsuario"></div> -->
+    <main class="container-user">
+      <div class="user">
+        <img
+          src="data:image/png;base64,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"
+          width="100px"
+          height="100px"
+        />
+        <span class="user-name">##nome## ###numeroMembro##</span>
+      </div>
+      <div>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a
+              class="nav-link link-usuario active"
+              data-toggle="tab"
+              href="#conta"
+              >Minha Conta</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link link-usuario"
+              data-toggle="tab"
+              href="#carteirinha"
+            >
+              Carteirinha
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link link-usuario" data-toggle="tab" href="#banco"
+              >Dados Bancários</a
+            >
+          </li> -->
+          <!-- <li class="nav-item">
+            <a
+              class="nav-link link-usuario"
+              data-toggle="tab"
+              href="#assinatura"
+              >Assinaturas</a
+            >
+          </li> -->
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div id="conta" class="tab-pane active">
+            <div class="container-conta">
+              <div>
+                <form action="#" method="POST">
+                  <input
+                    type="hidden"
+                    name="idcliente"
+                    id="idcliente"
+                    value="##idcliente##"
+                  />
+                  <input
+                    type="hidden"
+                    name="idcliente_iugu"
+                    id="idcliente_iugu"
+                    value="##idcliente_iugu##"
+                  />
+                  <div class="form-group">
+                    <label for="nome"><b>Nome</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="nome"
+                      name="nome"
+                      value="##nome##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="apelido"><b>Apelido</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="apelido"
+                      name="apelido"
+                      value="##apelido##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email"><b>Email</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="email"
+                      name="email"
+                      value="##email##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="cpf"><b>CPF</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="cpf"
+                      name="cpf"
+                      value="##cpf##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="rg"><b>RG</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="rg"
+                      name="rg"
+                      value="##rg##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="rua"><b>Rua</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="rua"
+                      name="rua"
+                      value="##rua##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="numero"><b>Numero</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="numero"
+                      name="numero"
+                      value="##numero##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="cidade"><b>Cidade</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="cidade"
+                      name="cidade"
+                      value="##cidade##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="bairro"><b>Bairro</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="bairro"
+                      name="bairro"
+                      value="##bairro##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="estado"><b>Estado</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="estado"
+                      name="estado"
+                      value="##estado##"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="cep"><b>CEP</b></label>
+                    <input
+                      readonly
+                      class="form-control"
+                      type="text"
+                      id="cep"
+                      name="cep"
+                      value="##cep##"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="col-12" align="center">
+                      <button
+                        type="button"
+                        class="btn btnCinza"
+                        id="btnEditarPerfil"
+                        onclick="editarPerfil()"
+                      >
+                        Editar
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btnRed"
+                        id="btnSalvarPerfil"
+                        style="display: none"
+                        onclick="salvarPerfil()"
+                      >
+                        Salvar
+                      </button>
                     </div>
                   </div>
-                  <div id="banco" class="tab-pane fade">
-                    <div class="row pt-5">
-                      <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                        <h3>Em Desenvolvimento!</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="assinatura" class="tab-pane fade">
-                    <div class="row pt-5">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                        ##listaDeAssinaturas##
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-1 col-md-1 col-sm-1 d-none d-sm-block"></div>
-            </div>
-            <div class="row pt-4 pb-4">
-              <div class="col-12" align="center">
-                <button type="button" class="btn btnRed" onclick="deslogarConta()">Sair</button>
+                </form>
               </div>
             </div>
           </div>
-        </section>
-        <!--================Usuario Area =================-->
-        
-    </body>
+          <div id="carteirinha" class="tab-pane fade">
+            <div class="container-carteirinha">
+              <div class="divCarteirinha">
+                <div class="nomeCarteirinha">##nome##</div>
+                <div class="container-info-carteirinha">
+                  <span class="cpfCarteirinha">##cpf##</span>
+                  <span class="numeroCarteirinha">###numeroMembro##</span>
+                </div>
+                <!-- <div class="validadeCarteirinha" align="right">
+                  Válido até <br />
+                  <span class="dataCarteirinha">##validade##</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <!-- <div id="banco" class="tab-pane fade">
+            <div class="row pt-5">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <h3>Em Desenvolvimento!</h3>
+              </div>
+            </div>
+          </div>
+          <div id="assinatura" class="tab-pane fade">
+            <div class="row pt-5">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                ##listaDeAssinaturas##
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="container-sair">
+        <button type="button" class="btn btnRed" onclick="deslogarConta()">
+          Sair
+        </button>
+      </div>
+    </main>
+    <!--================Usuario Area =================-->
+  </body>
 </html>
