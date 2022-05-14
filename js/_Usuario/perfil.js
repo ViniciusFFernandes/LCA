@@ -21,7 +21,7 @@ function editarPerfil(){
   $("#nome").attr("readonly", false);
   $("#apelido").attr("readonly", false);
   // $("#email").attr("readonly", false); //não permite alteração
-  $("#cpf").attr("readonly", false);
+  // $("#cpf").attr("readonly", false); //não permite alteração
   $("#rg").attr("readonly", false);
   $("#rua").attr("readonly", false);
   $("#numero").attr("readonly", false);
@@ -40,7 +40,7 @@ function salvarPerfil(){
   $("#nome").attr("readonly", true);
   $("#apelido").attr("readonly", true);
   // $("#email").attr("readonly", true); //não permite alteração
-  $("#cpf").attr("readonly", true);
+  // $("#cpf").attr("readonly", true); //não permite alteração
   $("#rg").attr("readonly", true);
   $("#rua").attr("readonly", true);
   $("#numero").attr("readonly", true);

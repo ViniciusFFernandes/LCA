@@ -180,7 +180,6 @@
             //
             $dados = array();
             $dados['data']['name'] = $this->util->nulo($data['nome']);
-            $dados['data']['CPF'] = $this->util->nulo($data['cpf']);
             $dados['data']['surname'] = $this->util->nulo($data['apelido']);
             $dados['data']['RG'] = $this->util->nulo($data['rg']);
             $dados['data']['street'] = $this->util->nulo($data['rua']);
