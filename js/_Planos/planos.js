@@ -10,7 +10,37 @@ function contratarPlano(idplano){
         $("#btnAssinatura_" + idplano).html("ASSINAR");
         $(".btnAssinaturas").attr("disabled", false);
         //
-        window.open(data.secure_url, "pagamentoDeAssinatura", "height=800,width=1000");
+        if(data.erro){
+            if(data.erroTipo == 1){
+                swal({
+                    title: "Erro ao gerar fatura",
+                    text: "Você já possui uma fatura pedente, caso tenha pago aguarde para que seja compensado",
+                    icon: "error",
+                    buttons: {
+                        cancel: "Fechar",
+                        defeat: "Acessar Perfil",
+                    },
+                }).then((value) => {
+                    if(value){
+                        window.location.assign("../perfil/");
+                    }
+                });
+            }
+        }else{
+            swal({
+                title: "Fatura gerada",
+                text: "Clique eu pagar agora ou acesse seu perfil na aba assinaturas para efetuar o pagamento",
+                icon: "success",
+                buttons: {
+                    cancel: "Pagar Depois",
+                    defeat: "Pagar Agora",
+                },
+              }).then((value) => {
+                if(value){
+                    window.open(data.secure_url, "pagamentoDeAssinatura", "height=800,width=1000");
+                }
+              });
+        }
         //
     }, "json");
 }

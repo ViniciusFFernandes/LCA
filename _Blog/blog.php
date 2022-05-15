@@ -3,7 +3,6 @@
   require_once("blog.class.php");
   //
   $blog = new blog();
-  //
   $posts = $blog->buscarPosts();
   //
   if(!empty($posts->error)){

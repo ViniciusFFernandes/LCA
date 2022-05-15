@@ -4,7 +4,6 @@
   require_once("blog.class.php");
   //
   $blog = new blog();
-  //
   $conversorMark = new Parsedown();
   //
   $post = $blog->buscaPost($idpost);

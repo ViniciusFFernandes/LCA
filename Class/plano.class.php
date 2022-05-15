@@ -1,14 +1,17 @@
 <?php
     require_once("util.class.php");
     require_once("iugu.class.php");
+    require_once("autoload.php");
 
 	class plano {
         private $util;
         private $iugu;
+        private $conversorMark;
 
 		function __construct(){
             $this->util = new Util();
             $this->iugu = new iugu();
+            $this->conversorMark = new Parsedown();
 		}
 
 		public function buscarPlanos(){
@@ -81,7 +84,7 @@
             $html = str_replace("##tituloPlano##", $dados->attributes->title, $html);
             $html = str_replace("##valorPlano##", $this->util->formataMoeda($dados->attributes->value_in_cents / 100), $html);
 			$html = str_replace("##duracaoPlano##", $dados->attributes->duration_in_months, $html);
-			$html = str_replace("##descricaoPlano##", $dados->attributes->description, $html);
+			$html = str_replace("##descricaoPlano##", $this->conversorMark->text($dados->attributes->description), $html);
             if($_SESSION['logado']){
                 $html = str_replace("##functionBtnAssinar##", "contratarPlano(##id##)", $html);
             }else{
@@ -218,6 +221,39 @@
             $parameters['sort'] = 'date_buy:desc';
             $parameters['filters']['client'] = $idcliente;
             $parameters['filters']['status'] = 'Paga';
+            //
+            $url = API . "/subscriptions?" . http_build_query($parameters);
+            //
+            ob_start();
+            //
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_exec($ch);
+            //
+            // JSON de retorno  
+            $resposta = json_decode(ob_get_contents());
+            // $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            // $erro = curl_errno($ch);
+            // $info = curl_getinfo($ch);
+            //
+            ob_end_clean();
+            curl_close($ch);
+            //
+            return $resposta->data[0];
+        }
+
+        public function buscarUltimaAssinatura($idcliente){
+            $headers = array();
+            $headers[] = "Content-Type: application/json";
+            $headers[] = "Authorization: Bearer " . $_SESSION['jwt'];
+            //
+            $parameters = array();
+            $parameters['populate'] = '*';
+            $parameters['sort'] = 'date_buy:desc';
+            $parameters['filters']['client'] = $idcliente;
             //
             $url = API . "/subscriptions?" . http_build_query($parameters);
             //
