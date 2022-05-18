@@ -21,7 +21,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-7 col-12 cardLogin">
                     <form class="alinhaCentro" action="_BD/conecta_login.php" method="POST" >
                         <center><img src="img/logo.png" class="img-fluid" width="40%"></center>
-                        <input type="hidden" id="operacao" name="operacao" value="logar">
                         <input type="hidden" id="redirect" name="redirect" value="##redirect##">
                         <div class="form-group">
                             <input class="form-control" type="text" id="usuario" name="usuario" placeholder="cpf" autofocus>
@@ -29,7 +28,7 @@
                         <div class="form-group pb-4">
                             <input class="form-control" type="password" id="senha" name="senha" placeholder="Senha">
                         </div>
-                        <center class="pb-3"><button type="submit" class="btn btnRedLogin">ENTRAR</button></center>
+                        <center class="pb-3"><button type="button" id="btnLogar" onclick="logar()" class="btn btnRedLogin">ENTRAR</button></center>
                         <center><a href="cadastrar##redirectCadastrar##" class="link">CRIAR CONTA</a></center>
                     </form>
                 </div>
@@ -46,4 +45,5 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="js/lightbox/simpleLightbox.min.js"></script>
     <script src="js/_Usuario/login.js"></script>
+    <script src="js/sweetalert.min.js"></script>
 </html>

@@ -32,12 +32,13 @@ $util = new util();
 //Efetua o login
 if ($_POST['operacao'] == "logar") {
 	//
+	$retorno = array();
+	//
 	//Busca os dados do usuario na API
 	$dados = $usuarios->buscarUsuarioLogin($_POST['usuario'], $_POST['senha']);
-	// var_dump($dados);
-	// exit;
 	//
 	if(!empty($dados->jwt)){
+		$retorno['erro'] = 0;
 		//
 		$_SESSION['logado'] 						= true;
 		$_SESSION['username'] 						= $dados->user->username;
@@ -46,29 +47,30 @@ if ($_POST['operacao'] == "logar") {
 		$_SESSION['jwt']				 	    	= $dados->jwt;
 		//
 		if($_REQUEST['redirect'] != ""){
-			header('Location: ../' . base64_decode($_REQUEST['redirect']));
+			$retorno['url'] = '..'. $_SERVER['BASE'] . '/' . base64_decode($_POST['redirect']);
 		}else{
-			header('Location: ../blog/');
+			$retorno['url'] = '..' . $_SERVER['BASE'] . '/blog/';
 		}
-		exit;
 	}else{
 		$_SESSION['logado'] = false;
-		$_SESSION['mensagem'] = "Usuario ou senha incorretos!!!<br>Tente novamente";
-    	$_SESSION['tipoMsg'] = "danger";
-		header('location: ../index.php');
-		exit;
+		$retorno['erro'] = 1;
 	}
+	//
+	echo json_encode($retorno);
+	exit;
 }
 
 //
 //Operação para inserir novo usuario
 if($_POST['operacao'] == 'novaConta'){
+	//
+	$retorno = array();
+	//
 	$dados = $usuarios->incluirNovoUsuario($_POST);
 	//
 	if(!empty($dados->jwt)){
-		$_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
-    	$_SESSION['tipoMsg'] = "succes";
-		if($_REQUEST['redirect'] != ""){
+		$retorno['erro'] = 0;
+		if($_POST['redirect'] != ""){
 			$dados = $usuarios->buscarUsuarioLogin($_POST['cpf'], $_POST['senha']);
 			//
 			$_SESSION['logado'] 						= true;
@@ -77,17 +79,17 @@ if($_POST['operacao'] == 'novaConta'){
 			$_SESSION['idusuario']				 	    = $dados->user->id;
 			$_SESSION['jwt']				 	    	= $dados->jwt;
 			//
-			header('Location: ../' . base64_decode($_REQUEST['redirect']));
+			$retorno['tipo'] = 1;
+			$retorno['url'] = '../' . $_SERVER['BASE'] . '/' . base64_decode($_POST['redirect']);
 		}else{
-			header('location: ../index.php');
+			$retorno['tipo'] = 2;
 		}
-		exit;
 	}else{
-		$_SESSION['mensagem'] = "Erro ao cadastrar novo usuario!";
-    	$_SESSION['tipoMsg'] = "error";
-		header('location: cadastrar');
-		exit;
+		$retorno['erro'] = 1;
 	}
+	//
+	echo json_encode($retorno);
+	exit;
 }
 
 //

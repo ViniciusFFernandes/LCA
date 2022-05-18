@@ -13,16 +13,11 @@
   $html = new html();
   //
   //Monta variaveis de exibição
-  if (isset($_SESSION['mensagem'])) {
-    $msg = $html->mostraMensagem($_SESSION['tipoMsg'], $_SESSION['mensagem']);
-    unset($_SESSION['mensagem'], $_SESSION['tipoMsg']);
-  }
-  $linkLogin = $_SERVER['REDIRECT_BASE'] . "/";
+  $linkLogin = $_SERVER['BASE'] . "/";
   if(!empty($_REQUEST['redirect'])) $linkLogin .= '?redirect=' . $_REQUEST['redirect'];
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
   $html = $html->buscaHtml(pathinfo( __FILE__ ));
-  $html = str_replace("##Mensagem##", $msg, $html);
   $html = str_replace("##redirect##", $_REQUEST['redirect'], $html);
   $html = str_replace("##linkLogin##", $linkLogin, $html);
   echo $html;
