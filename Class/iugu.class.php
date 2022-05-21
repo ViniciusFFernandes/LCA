@@ -234,6 +234,38 @@
             //
 			return $resposta;
         }
+
+		public function cancelarFatura($idfatura){
+            //
+            //
+            $headers = array();
+            $headers[] = "Accept: application/json";
+            $headers[] = "Content-Type: application/json";
+            $headers[] = "Authorization: Basic Base64(" . TOKEN_TESTE_IUGU . ":" . ")"; // Coloque aqui seu Token
+			//
+			$url = "https://api.iugu.com/v1/invoices/{$idfatura}/cancel?api_token=" . TOKEN_TESTE_IUGU;
+            //
+			ob_start();
+			//
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			// curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_exec($ch);
+			//
+			// JSON de retorno  
+			$resposta = json_decode(ob_get_contents());
+			$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+			$erro = curl_errno($ch);
+			$info = curl_getinfo($ch);
+            //
+			ob_end_clean();
+			curl_close($ch);
+            //
+			return $resposta;
+        }
 	}
 
 

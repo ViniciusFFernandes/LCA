@@ -323,8 +323,10 @@
             $btnPagar = '';
             if($dados->attributes->id_invoice_iugu != '' && $dados->attributes->status == 'Pendente'){
                 $btnPagar = file_get_contents("_Planos/_HTML/componentes/btnPagarAssinatura.html");
+                $btnCancelar = file_get_contents("_Planos/_HTML/componentes/btnCancelarAssinatura.html");
             }
 			$html = str_replace("##btnPagar##",  $btnPagar, $html);
+			$html = str_replace("##btnCancelar##",  $btnCancelar, $html);
 			$html = str_replace("##idiugu##",  $dados->attributes->id_invoice_iugu, $html);
             //
             $html = str_replace("##id##", $dados->id, $html);

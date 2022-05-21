@@ -10,6 +10,8 @@ $path .= PATH_SEPARATOR . '../privado/';
 $path .= PATH_SEPARATOR . 'privado/';
 $path .= PATH_SEPARATOR . '../_BD/';
 $path .= PATH_SEPARATOR . '_BD/';
+$path .= PATH_SEPARATOR . 'vendor/';
+$path .= PATH_SEPARATOR . '../vendor/';
 set_include_path(get_include_path() . $path);
 //
 require_once("usuarios.class.php");

@@ -82,8 +82,41 @@ function pagarAssinatura(idfatura){
   function(data){
       $("#btnAssinatura_" + idfatura).html("PAGAR");
       $(".btnPagarAssinatura").attr("disabled", false);
+      $(".btnCancelarAssinatura").attr("disabled", false);
       //
       window.open(data.secure_url, "pagamentoDeAssinatura", "height=800,width=1000");
+      //
+  }, "json");
+}
+
+function cancelarAssinatura(idfatura){
+  $("#btnCancelaAssinatura_" + idfatura).html("<img src='../img/carregando.gif' width='30px'>");
+  $(".btnPagarAssinatura").attr("disabled", true);
+  $(".btnCancelarAssinatura").attr("disabled", true);
+  //
+  $.post("../_Usuario/perfil_grava.php",
+  {operacao: "cancelarAssinatura",
+  idfatura: idfatura},
+  function(data){
+      $("#btnCancelaAssinatura_" + idfatura).html("CANCELAR");
+      $(".btnPagarAssinatura").attr("disabled", false);
+      $(".btnCancelarAssinatura").attr("disabled", false);
+      if(data.status == 'canceled'){
+        $("#btnCancelaAssinatura_" + idfatura).hide();
+        $("#btnAssinatura_" + idfatura).hide();
+        $("#status_fatura_" + idfatura).html("Cancelada");
+        swal({
+          title: "Fatura Cancelada",
+          text: "Sua fatura foi cancelada com sucesso!",
+          icon: "success",
+        });
+      }else{
+        swal({
+          title: "Atenção",
+          text: "Não foi possivel cancelar sua fatura, tente novamente mais tarde!",
+          icon: "error",
+        });
+      }
       //
   }, "json");
 }

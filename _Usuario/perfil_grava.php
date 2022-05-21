@@ -17,5 +17,14 @@
     //
     echo json_encode($retorno);
     exit;
-}
+  }
+
+  if($_POST['operacao'] == 'cancelarAssinatura'){
+    //
+    $iugu = new iugu();
+    $retorno = $iugu->cancelarFatura($_POST['idfatura']);
+    //
+    echo json_encode($retorno);
+    exit;
+  }
 ?>

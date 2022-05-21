@@ -1,5 +1,13 @@
 <?php
   require_once("_BD/conecta_login.php");
+  //
+  //Precisa estar logado
+  if (!isset($_SESSION['logado'])) {
+    session_destroy();
+    header('Location: ../index.php');
+    exit;
+  }
+  //
   require_once("plano.class.php");
   //
   $dadosUser = $usuarios->buscarUsuario();
