@@ -18,7 +18,10 @@ function contratarPlano(idplano){
                     icon: "error",
                     buttons: {
                         cancel: "Fechar",
-                        defeat: "Acessar Perfil",
+                        defeat: {
+                            text: "Acessar Perfil",
+                            className: 'btnVermelho'
+                        }
                     },
                 }).then((value) => {
                     if(value){
@@ -33,7 +36,10 @@ function contratarPlano(idplano){
                 icon: "success",
                 buttons: {
                     cancel: "Pagar Depois",
-                    defeat: "Pagar Agora",
+                    defeat: {
+                        text: "Pagar Agora",
+                        className: 'btnVermelho'
+                    }
                 },
               }).then((value) => {
                 if(value){
@@ -52,7 +58,10 @@ function logarCriaConta(urlCripto){
         icon: "error",
         buttons: {
             cancel: "Nova Conta",
-            defeat: "Logar",
+            defeat: {
+                text: "Logar",
+                className: 'btnVermelho'
+            }
         },
       }).then((value) => {
         if(value){

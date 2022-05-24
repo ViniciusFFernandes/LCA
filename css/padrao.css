@@ -170,6 +170,17 @@ body {
 
 .btnRedLogin:hover{
     filter: brightness(0.9);
+    
+}
+
+.btnVermelho{
+    background-color: #EE0000;
+    color: white;
+}
+
+.btnVermelho:hover{
+    background-color: #eb4a4a !important;
+    color: white !important;
 }
 
 .btnRed{

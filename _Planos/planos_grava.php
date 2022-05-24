@@ -6,6 +6,8 @@
     //
     if($_POST['operacao'] == 'contratarPlano'){
         //
+        $dadosUser = $usuarios->buscarUsuario();
+        //
         $plano = new plano();
         $assinatura = $plano->buscarUltimaAssinatura($dadosUser->id);
         if($assinatura->attributes->status == 'Pendente' || $assinatura->attributes->status == 'Em Análise' || $assinatura->attributes->status == 'Paga Parcial'){
@@ -17,8 +19,6 @@
         }
         //
         $dadosPlano = $plano->buscarPlano($_POST['idplano']);
-        $dadosUser = $usuarios->buscarUsuario();
-        //
         //
         $dadosFatura = $plano->gerarAssinatura($dadosPlano->data->attributes, $dadosUser->id, $dadosUser->attributes, $dadosUser->attributes->users_permissions_user->data->attributes->email);
         //

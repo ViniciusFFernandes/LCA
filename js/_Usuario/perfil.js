@@ -109,12 +109,24 @@ function cancelarAssinatura(idfatura){
           title: "Fatura Cancelada",
           text: "Sua fatura foi cancelada com sucesso!",
           icon: "success",
+          buttons: {
+            defeat: {
+              text: "Ok",
+              className: 'btnVermelho'
+            }
+          },
         });
       }else{
         swal({
           title: "Atenção",
           text: "Não foi possivel cancelar sua fatura, tente novamente mais tarde!",
           icon: "error",
+          buttons: {
+            defeat: {
+              text: "Ok",
+              className: 'btnVermelho'
+            }
+          },
         });
       }
       //

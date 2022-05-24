@@ -27,7 +27,10 @@ function logar(){
               text: "CPF ou Senha não confere",
               icon: "error",
               buttons: {
-                  defeat: "Ok",
+                defeat: {
+                  text: "Ok",
+                  className: 'btnVermelho'
+                }
               },
             }).then((value) => {
               $("#usuario").focus();

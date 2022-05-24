@@ -87,7 +87,10 @@ function inserirUsuario(){
       text: "Informe o endereço completo",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#rua").focus();
@@ -102,7 +105,10 @@ function inserirUsuario(){
       text: "Informe o endereço completo",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#numero").focus();
@@ -117,7 +123,10 @@ function inserirUsuario(){
       text: "Informe o endereço completo",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#cidade").focus();
@@ -132,7 +141,10 @@ function inserirUsuario(){
       text: "Informe o endereço completo",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#bairro").focus();
@@ -147,7 +159,10 @@ function inserirUsuario(){
       text: "Informe o endereço completo",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#cep").focus();
@@ -162,7 +177,10 @@ function inserirUsuario(){
       text: "A senha não pode ficar em branco",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#senha").focus();
@@ -177,7 +195,10 @@ function inserirUsuario(){
       text: "As duas senhas informadas não conferem",
       icon: "error",
       buttons: {
-          defeat: "Ok",
+          defeat: {
+            text: "Ok",
+            className: 'btnVermelho'
+          }
       },
     }).then((value) => {
       $("#senha2").focus();
@@ -209,7 +230,10 @@ function inserirUsuario(){
               text: "Ocorreu um erro ao criar sua conta!\n\nTente novamente mais tarde ou entre em contato com um administrador.",
               icon: "error",
               buttons: {
-                  defeat: "Ok",
+                  defeat: {
+                    text: "Ok",
+                    className: 'btnVermelho'
+                  }
               },
             });
           }else{
@@ -221,7 +245,10 @@ function inserirUsuario(){
                 text: "Você será direcionado para fazer o login",
                 icon: "success",
                 buttons: {
-                    defeat: "Ok",
+                    defeat: {
+                      text: "Ok",
+                      className: 'btnVermelho'
+                    }
                 },
               }).then((value) => {
                 $("#btnLogar").click();
