@@ -109,7 +109,7 @@
             $dados['data']['value_in_cents'] = intval($dadosPlano->value_in_cents);
             $dados['data']['date_buy'] = date("Y-m-d") . "T" . date("H:i:s") . "Z";
             $dados['data']['date_status'] = date("Y-m-d") . "T" . date("H:i:s") . "Z";
-            $dados['data']['date_expire'] = date("Y-m-d", strtotime("+" . $dadosPlano->duration_in_months . " month"));
+            $dados['data']['date_expire'] = date("Y") . '-12-31';
             $dados['data']['status'] = "Pendente";
             $dados['data']['client'] = $idcliente;
             $dados['data']['id_invoice_iugu'] = "0";
