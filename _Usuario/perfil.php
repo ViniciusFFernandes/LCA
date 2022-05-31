@@ -22,9 +22,13 @@
      $htmlAssinaturas .= $plano->geraListaAssinatura($assinaturaDados);
    }
   //
-  if (isset($_SESSION['mensagem'])) {
-    $msg = $html->mostraMensagem($_SESSION['tipoMsg'], $_SESSION['mensagem']);
-    unset($_SESSION['mensagem'], $_SESSION['tipoMsg']);
+  $escondeCarteirinha = '';
+  $mostraNaoAssinante = 'style="display:none;"';
+  $assinatura = $plano->buscarUltimaAssinaturaPaga($dadosUser->id);
+  //
+  if(strtotime($assinatura->attributes->date_expire) < strtotime(date("Y-m-d"))){
+    $escondeCarteirinha = 'style="display:none;"';
+    $mostraNaoAssinante = '';
   }
   //
   //Abre o arquivo html e Inclui mensagens e trechos php
@@ -37,7 +41,7 @@
   $html = str_replace("##rua##", $dadosUser->attributes->street, $html);
   $html = str_replace("##numero##", $dadosUser->attributes->address_number, $html);
   $html = str_replace("##cidade##", $dadosUser->attributes->city, $html);
-  $html = str_replace("##estado##", $dadosUser->attributes->district, $html);
+  $html = str_replace("##estado##", $dadosUser->attributes->state, $html);
   $html = str_replace("##bairro##", $dadosUser->attributes->district, $html);
   $html = str_replace("##cep##", $dadosUser->attributes->CEP, $html);
   $html = str_replace("##validade##", '', $html);
@@ -46,6 +50,8 @@
   $html = str_replace("##idcliente##", $dadosUser->id, $html);
   $html = str_replace("##idcliente_iugu##", $dadosUser->attributes->id_iugu, $html);
   $html = str_replace("##listaDeAssinaturas##", $htmlAssinaturas, $html);
+  $html = str_replace("##escondeCarteirinha##", $escondeCarteirinha, $html);
+  $html = str_replace("##mostraNaoAssinante##", $mostraNaoAssinante, $html);
   echo $html;
   exit;
 ?>
