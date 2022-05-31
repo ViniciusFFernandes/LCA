@@ -38,6 +38,19 @@
 		});
 	});
 
+	$route->group(['prefix' => '/evento'], function($route) {
+		$route->get('/', function() {
+			require_once("_Eventos/eventos.php");
+		});
+		//
+		$route->get('/{post}', function(\PlugRoute\Http\Request $request) {
+			$idpost = $request->parameter('post');
+			//
+			require_once("_Eventos/eventos_post.php");
+		});
+	});
+
+
 	$route->notFound(function(){
 		echo "Pagina não encontrada";
 	});
