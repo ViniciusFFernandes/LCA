@@ -185,8 +185,6 @@
             $dados['data']['street'] = $this->util->nulo($data['rua']);
             $dados['data']['address_number'] = $this->util->nulo($data['numero']);
             $dados['data']['district'] = $this->util->nulo($data['bairro']);
-            $dados['data']['city'] = $this->util->nulo($data['cidade']);
-            $dados['data']['state'] = $this->util->nulo($data['estado']);
             $dados['data']['CEP'] = $this->util->nulo($data['cep']);
             //
             //
