@@ -154,7 +154,8 @@
             $data['fines'] = false;
             $data['customer_id'] = $dadosCliente->id_iugu;
             $data['ignore_due_email'] = false;
-            $data['payable_with'][0] = "all";
+            $data['payable_with'][0] = "credit_card";
+            $data['payable_with'][1] = "pix";
             $data['custom_variables'][0]['name'] = "idassinatura";
             $data['custom_variables'][0]['value'] = $idassinatura;
             $data['early_payment_discount'] = false;
