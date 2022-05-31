@@ -79,8 +79,11 @@
         public function geraPost($dados){
             $html = file_get_contents("_Blog/_HTML/componentes/postMini.html");
             //
+            $resumo = '';
+            if(!empty($dados->attributes->resume)) $resumo = substr($dados->attributes->resume, 0, 80) . '...';
+            //
             $html = str_replace("##tituloPost##", $dados->attributes->title, $html);
-            $html = str_replace("##description##", substr($dados->attributes->content, 0, 80) . '...', $html);
+            $html = str_replace("##description##", $resumo, $html);
 			$html = str_replace("##idPost##", $dados->id, $html);
 			$html = str_replace("##imgPost##", $dados->attributes->banner->data->attributes->url, $html);
 			$html = str_replace("##dataPublicacao##", $this->util->convertDataAPI($dados->attributes->publishedAt, false), $html);
