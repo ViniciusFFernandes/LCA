@@ -81,41 +81,41 @@ function inserirUsuario(){
     return;
   }
   //
-  if($("#rua").val() == ''){
-    swal({
-      title: "Campo Obrigatório",
-      text: "Informe o endereço completo",
-      icon: "error",
-      buttons: {
-          defeat: {
-            text: "Ok",
-            className: 'btnVermelho'
-          }
-      },
-    }).then((value) => {
-      $("#rua").focus();
-    });
-    desabilitaHabilitaBtn('Habilitar');
-    return;
-  }
+  // if($("#rua").val() == ''){
+  //   swal({
+  //     title: "Campo Obrigatório",
+  //     text: "Informe o endereço completo",
+  //     icon: "error",
+  //     buttons: {
+  //         defeat: {
+  //           text: "Ok",
+  //           className: 'btnVermelho'
+  //         }
+  //     },
+  //   }).then((value) => {
+  //     $("#rua").focus();
+  //   });
+  //   desabilitaHabilitaBtn('Habilitar');
+  //   return;
+  // }
   //
-  if($("#numero").val() == ''){
-    swal({
-      title: "Campo Obrigatório",
-      text: "Informe o endereço completo",
-      icon: "error",
-      buttons: {
-          defeat: {
-            text: "Ok",
-            className: 'btnVermelho'
-          }
-      },
-    }).then((value) => {
-      $("#numero").focus();
-    });
-    desabilitaHabilitaBtn('Habilitar');
-    return;
-  }
+  // if($("#numero").val() == ''){
+  //   swal({
+  //     title: "Campo Obrigatório",
+  //     text: "Informe o endereço completo",
+  //     icon: "error",
+  //     buttons: {
+  //         defeat: {
+  //           text: "Ok",
+  //           className: 'btnVermelho'
+  //         }
+  //     },
+  //   }).then((value) => {
+  //     $("#numero").focus();
+  //   });
+  //   desabilitaHabilitaBtn('Habilitar');
+  //   return;
+  // }
   //
   if($("#cidade").val() == ''){
     swal({
@@ -134,11 +134,10 @@ function inserirUsuario(){
     desabilitaHabilitaBtn('Habilitar');
     return;
   }
-  //
-  if($("#bairro").val() == ''){
+  if($("#estado").val() == ''){
     swal({
       title: "Campo Obrigatório",
-      text: "Informe o endereço completo",
+      text: "Informe o estado",
       icon: "error",
       buttons: {
           defeat: {
@@ -147,29 +146,47 @@ function inserirUsuario(){
           }
       },
     }).then((value) => {
-      $("#bairro").focus();
+      $("#estado").focus();
     });
     desabilitaHabilitaBtn('Habilitar');
     return;
   }
   //
-  if($("#cep").val() == ''){
-    swal({
-      title: "Campo Obrigatório",
-      text: "Informe o endereço completo",
-      icon: "error",
-      buttons: {
-          defeat: {
-            text: "Ok",
-            className: 'btnVermelho'
-          }
-      },
-    }).then((value) => {
-      $("#cep").focus();
-    });
-    desabilitaHabilitaBtn('Habilitar');
-    return;
-  }
+  // if($("#bairro").val() == ''){
+  //   swal({
+  //     title: "Campo Obrigatório",
+  //     text: "Informe o endereço completo",
+  //     icon: "error",
+  //     buttons: {
+  //         defeat: {
+  //           text: "Ok",
+  //           className: 'btnVermelho'
+  //         }
+  //     },
+  //   }).then((value) => {
+  //     $("#bairro").focus();
+  //   });
+  //   desabilitaHabilitaBtn('Habilitar');
+  //   return;
+  // }
+  //
+  // if($("#cep").val() == ''){
+  //   swal({
+  //     title: "Campo Obrigatório",
+  //     text: "Informe o endereço completo",
+  //     icon: "error",
+  //     buttons: {
+  //         defeat: {
+  //           text: "Ok",
+  //           className: 'btnVermelho'
+  //         }
+  //     },
+  //   }).then((value) => {
+  //     $("#cep").focus();
+  //   });
+  //   desabilitaHabilitaBtn('Habilitar');
+  //   return;
+  // }
   //
   if($("#senha").val() == ''){
     swal({

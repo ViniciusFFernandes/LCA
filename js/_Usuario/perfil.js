@@ -44,8 +44,8 @@ function salvarPerfil(){
   $("#rg").attr("readonly", true);
   $("#rua").attr("readonly", true);
   $("#numero").attr("readonly", true);
-  $("#cidade").attr("readonly", true);
-  $("#estado").attr("readonly", true);
+  // $("#cidade").attr("readonly", true); //não permite alteração
+  // $("#estado").attr("readonly", true); //não permite alteração
   $("#bairro").attr("readonly", true);
   $("#cep").attr("readonly", true);
   //
@@ -55,12 +55,9 @@ function salvarPerfil(){
     idcliente_iugu: $("#idcliente_iugu").val(),
     nome: $("#nome").val(),
     apelido: $("#apelido").val(),
-    cpf: $("#cpf").val(),
     rg: $("#rg").val(),
     rua: $("#rua").val(),
     numero: $("#numero").val(),
-    cidade: $("#cidade").val(),
-    estado: $("#estado").val(),
     bairro: $("#bairro").val(),
     cep: $("#cep").val()
   }, function(data){
@@ -104,7 +101,7 @@ function cancelarAssinatura(idfatura){
       if(data.status == 'canceled'){
         $("#btnCancelaAssinatura_" + idfatura).hide();
         $("#btnAssinatura_" + idfatura).hide();
-        $("#status_fatura_" + idfatura).html("Cancelada");
+        $("#status_fatura_" + idfatura).html("Processando Cancelamento");
         swal({
           title: "Fatura Cancelada",
           text: "Sua fatura foi cancelada com sucesso!",
