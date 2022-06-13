@@ -2,8 +2,6 @@
     require_once("../_BD/conecta_login.php");
     require_once("plano.class.php");
     //
-    $plano = new plano();
-    //
     if($_POST['operacao'] == 'contratarPlano'){
         //
         $dadosUser = $usuarios->buscarUsuario();

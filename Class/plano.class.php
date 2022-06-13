@@ -102,44 +102,60 @@
             $headers[] = "Content-Type: application/json";
             $headers[] = "Authorization: Bearer " . $jwt;
             //
-
+            $valorParcela = $dadosPlano->value_in_cents / $dadosPlano->parcelas;
+            $x = 1;
+            $idParcelaPrincipal = 'NaN';
+            $primeiro = true;
+            $retornoFaturaPrincipal = '';
+            $vencimento = date("Y-m-d", strtotime("+3 day"));
+            while ($x <= $dadosPlano->parcelas){
+                $dados = array();
+                $dados['data']['expires_in_month'] = intval($dadosPlano->duration_in_months);
+                $dados['data']['value_in_cents'] = intval($valorParcela);
+                $dados['data']['date_buy'] = date("Y-m-d") . "T" . date("H:i:s") . "Z";
+                $dados['data']['date_status'] = date("Y-m-d") . "T" . date("H:i:s") . "Z";
+                $dados['data']['date_expire'] = date("Y") . '-12-31';
+                $dados['data']['status'] = "Pendente";
+                $dados['data']['client'] = $idcliente;
+                $dados['data']['id_invoice_iugu'] = "0";
+                $dados['data']['idsubscription'] = $idParcelaPrincipal;
+                $dados['data']['date_vencto'] = $vencimento;
+                //
+                $url = API . '/subscriptions';
+                //
+                ob_start();
+                //
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados));
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+                curl_exec($ch);
+                //
+                // JSON de retorno  
+                $resposta = json_decode(ob_get_contents());
+                $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                $erro = curl_errno($ch);
+                $info = curl_getinfo($ch);
+                //
+                ob_end_clean();
+                curl_close($ch);
+                //
+                $retorno = $this->iugu->gerarFatura($resposta->data->id, $dadosPlano, $dadosCliente, $email, $vencimento);
+                //
+                self::atualizaAssinatura($resposta->data->id, $retorno->id, 'Pendente');
+                //
+                if($primeiro){
+                    $idParcelaPrincipal = $resposta->data->id;
+                    $retornoFaturaPrincipal = $retorno;
+                }
+                $primeiro = false;
+                $x++;
+                $vencimento = date('Y-m-d', strtotime("+60 days",strtotime($vencimento)));
+            }
             //
-            $dados = array();
-            $dados['data']['expires_in_month'] = intval($dadosPlano->duration_in_months);
-            $dados['data']['value_in_cents'] = intval($dadosPlano->value_in_cents);
-            $dados['data']['date_buy'] = date("Y-m-d") . "T" . date("H:i:s") . "Z";
-            $dados['data']['date_status'] = date("Y-m-d") . "T" . date("H:i:s") . "Z";
-            $dados['data']['date_expire'] = date("Y") . '-12-31';
-            $dados['data']['status'] = "Pendente";
-            $dados['data']['client'] = $idcliente;
-            $dados['data']['id_invoice_iugu'] = "0";
-            //
-            $url = API . '/subscriptions';
-            //
-            ob_start();
-            //
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados));
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-            curl_exec($ch);
-            //
-            // JSON de retorno  
-            $resposta = json_decode(ob_get_contents());
-            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $erro = curl_errno($ch);
-            $info = curl_getinfo($ch);
-            //
-            ob_end_clean();
-            curl_close($ch);
-			//
-            $retorno = $this->iugu->gerarFatura($resposta->data->id, $dadosPlano, $dadosCliente, $email);
-            //
-            self::atualizaAssinatura($resposta->data->id, $retorno->id, 'Pendente');
-            //
-            return $retorno;
+            return $retornoFaturaPrincipal;
         }
 
         public function atualizaAssinatura($idassinatura, $idiugu, $status){
@@ -245,6 +261,38 @@
             return $resposta->data[0];
         }
 
+        public function buscarAssinaturasLigadas($idassinatura){
+            $headers = array();
+            $headers[] = "Content-Type: application/json";
+            $headers[] = "Authorization: Bearer " . $_SESSION['jwt'];
+            //
+            $parameters = array();
+            $parameters['populate'] = '*';
+            $parameters['filters']['idsubscription'] = $idassinatura;
+            //
+            $url = API . "/subscriptions?" . http_build_query($parameters);
+            //
+            ob_start();
+            //
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_exec($ch);
+            //
+            // JSON de retorno  
+            $resposta = json_decode(ob_get_contents());
+            // $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            // $erro = curl_errno($ch);
+            // $info = curl_getinfo($ch);
+            //
+            ob_end_clean();
+            curl_close($ch);
+            //
+            return $resposta->data;
+        }
+
         public function buscarUltimaAssinatura($idcliente){
             $headers = array();
             $headers[] = "Content-Type: application/json";
@@ -323,11 +371,15 @@
             $btnPagar = '';
             if($dados->attributes->id_invoice_iugu != '' && $dados->attributes->status == 'Pendente'){
                 $btnPagar = file_get_contents("_Planos/_HTML/componentes/btnPagarAssinatura.html");
-                $btnCancelar = file_get_contents("_Planos/_HTML/componentes/btnCancelarAssinatura.html");
+                if($dados->attributes->idsubscription->data == ''){
+                    $btnCancelar = file_get_contents("_Planos/_HTML/componentes/btnCancelarAssinatura.html");
+                }
             }
+            
 			$html = str_replace("##btnPagar##",  $btnPagar, $html);
 			$html = str_replace("##btnCancelar##",  $btnCancelar, $html);
 			$html = str_replace("##idiugu##",  $dados->attributes->id_invoice_iugu, $html);
+			$html = str_replace("##idassinatura##",  $dados->id, $html);
             //
             $html = str_replace("##id##", $dados->id, $html);
             //

@@ -22,13 +22,21 @@
 
   if($_POST['operacao'] == 'cancelarAssinatura'){
     //
+    $plano = new plano();
     $iugu = new iugu();
     $retorno = $iugu->cancelarFatura($_POST['idfatura']);
     //
     if($retorno->status == 'canceled'){
-      $plano = new plano();
       $dadosAssinatura = $plano->buscarAssinatura($retorno->id);
       $plano->atualizaAssinatura($dadosAssinatura->id, $retorno->id, 'Processando Cancelamento');
+    }
+    //
+    $assinaturas = $plano->buscarAssinaturasLigadas($_POST['idassinatura']);
+    foreach ($assinaturas as $assinatura) {
+      $retornoAssinaturaLigada = $iugu->cancelarFatura($assinatura->id_invoice_iugu);
+      if($retorno->status == 'canceled'){
+        $plano->atualizaAssinatura($assinatura->id, $retornoAssinaturaLigada->id, 'Processando Cancelamento');
+      }
     }
     //
     echo json_encode($retorno);

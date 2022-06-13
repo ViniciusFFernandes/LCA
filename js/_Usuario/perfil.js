@@ -86,14 +86,15 @@ function pagarAssinatura(idfatura){
   }, "json");
 }
 
-function cancelarAssinatura(idfatura){
+function cancelarAssinatura(idfatura, idassinatura){
   $("#btnCancelaAssinatura_" + idfatura).html("<img src='../img/carregando.gif' width='30px'>");
   $(".btnPagarAssinatura").attr("disabled", true);
   $(".btnCancelarAssinatura").attr("disabled", true);
   //
   $.post("../_Usuario/perfil_grava.php",
   {operacao: "cancelarAssinatura",
-  idfatura: idfatura},
+  idfatura: idfatura,
+  idassinatura: idassinatura},
   function(data){
       $("#btnCancelaAssinatura_" + idfatura).html("CANCELAR");
       $(".btnPagarAssinatura").attr("disabled", false);

@@ -138,11 +138,11 @@
 			return $retorno;
         }
 
-		public function gerarFatura($idassinatura, $dadosPlano, $dadosCliente, $email){
+		public function gerarFatura($idassinatura, $dadosPlano, $dadosCliente, $email, $vencimento){
             //
             $data = array();
             $data['email'] = $email;
-            $data['due_date'] = date("Y-m-d", strtotime("+3 day"));
+            $data['due_date'] = $vencimento;
             $data['items'][0]['description'] = "Assinatura de {$dadosPlano->duration_in_months} meses";
             $data['items'][0]['quantity'] = 1;
             $data['items'][0]['price_cents'] = $dadosPlano->value_in_cents;
