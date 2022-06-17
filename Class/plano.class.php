@@ -362,7 +362,6 @@
         public function geraListaAssinatura($dados){
             $html = file_get_contents("_Planos/_HTML/componentes/assinaturaLista.html");
             //
-            $html = str_replace("##tituloAssinatura##", "TESTE DE ASSINATURA", $html);
             $html = str_replace("##valorAssinatura##", $this->util->formataMoeda($dados->attributes->value_in_cents / 100), $html);
 			$html = str_replace("##duracaoAssinatura##", $dados->attributes->expires_in_month, $html);
 			$html = str_replace("##duracaoVencimento##", $this->util->convertData($dados->attributes->date_expire), $html);
