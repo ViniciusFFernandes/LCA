@@ -100,6 +100,14 @@ div.container-sair {
   font-size: 24px;
 }
 
+.sem-carteirinha,
+.sem-assinaturas {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  padding: 50px 0;
+}
+
 @media only screen and (max-width: 600px) {
   main.container-user > div > ul.nav.nav-tabs {
     gap: 0px;
