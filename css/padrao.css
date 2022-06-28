@@ -318,3 +318,12 @@ body {
         top: 220px !important;
     }
 }
+
+@media (max-width: 400px) {
+    .btnRed,
+    .btnCinza {
+        padding: 5px 20px !important;
+        margin: 5px;
+        font-size: 0.75rem;
+    }
+}

@@ -108,6 +108,30 @@ div.container-sair {
   padding: 50px 0;
 }
 
+.container-assinatura {
+  background-color: white;
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 16px;
+  text-align: center;
+  align-items: center;
+}
+
+.container-assinatura > .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: end;
+}
+
+@media only screen and (max-width: 800px) {
+  .container-assinatura .info {
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 16px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   main.container-user > div > ul.nav.nav-tabs {
     gap: 0px;
@@ -135,6 +159,10 @@ div.container-sair {
   .numeroCarteirinha {
     font-size: 12px;
   }
+
+  .container-assinatura > .buttons {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -145,5 +173,13 @@ div.container-sair {
   main.container-user > div > ul.nav.nav-tabs > .nav-item > .nav-link {
     font-size: 12px;
     padding: 5px 10px;
+  }
+
+  main.container-user > .user > .user-name {
+    font-size: 1rem;
+  }
+
+  .container-assinatura .info {
+    font-size: 0.75rem;
   }
 }
