@@ -51,20 +51,20 @@ function inserirUsuario(){
     return;
   }
   //
-  if($("#email").val() == ''){
-    swal({
-      title: "Campo Obrigatório",
-      text: "O email não pode ficar em branco",
-      icon: "error",
-      buttons: {
-          defeat: "Ok",
-      },
-    }).then((value) => {
-      $("#email").focus();
-    });
-    desabilitaHabilitaBtn('Habilitar');
-    return;
-  }
+  // if($("#email").val() == ''){
+  //   swal({
+  //     title: "Campo Obrigatório",
+  //     text: "O email não pode ficar em branco",
+  //     icon: "error",
+  //     buttons: {
+  //         defeat: "Ok",
+  //     },
+  //   }).then((value) => {
+  //     $("#email").focus();
+  //   });
+  //   desabilitaHabilitaBtn('Habilitar');
+  //   return;
+  // }
   //
   if($("#cpf").val() == ''){
     swal({

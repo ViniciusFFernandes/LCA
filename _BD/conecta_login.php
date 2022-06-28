@@ -66,6 +66,10 @@ if($_POST['operacao'] == 'novaConta'){
 	//
 	$retorno = array();
 	//
+	if(empty($_POST['email'])){
+		$_POST['email'] = str_replace("-", "", str_replace(".", "", $_POST['cpf'])) . "@aligaclassea.com.br";
+	}
+	//
 	$dados = $usuarios->incluirNovoUsuario($_POST);
 	//
 	if(!empty($dados->jwt)){
