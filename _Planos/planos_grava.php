@@ -8,13 +8,13 @@
         //
         $plano = new plano();
         $assinatura = $plano->buscarUltimaAssinatura($dadosUser->id);
-        if($assinatura->attributes->status == 'Pendente' || $assinatura->attributes->status == 'Em Análise' || $assinatura->attributes->status == 'Paga Parcial'){
-            $retorno['erro'] = true;
-            $retorno['erroTipo'] = 1;
-            //
-            echo json_encode($retorno);
-            exit;
-        }
+        // if($assinatura->attributes->status == 'Pendente' || $assinatura->attributes->status == 'Em Análise' || $assinatura->attributes->status == 'Paga Parcial'){
+        //     $retorno['erro'] = true;
+        //     $retorno['erroTipo'] = 1;
+        //     //
+        //     echo json_encode($retorno);
+        //     exit;
+        // }
         //
         $dadosPlano = $plano->buscarPlano($_POST['idplano']);
         //

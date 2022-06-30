@@ -103,12 +103,12 @@
             $headers[] = "Authorization: Bearer " . $jwt;
             //
             $valorParcela = $dadosPlano->value_in_cents / $dadosPlano->parcelas;
-            $x = 1;
-            $idParcelaPrincipal = 'NaN';
+            $x = 0;
+            $idParcelaPrincipal = '';
             $primeiro = true;
             $retornoFaturaPrincipal = '';
             $vencimento = date("Y-m-d", strtotime("+3 day"));
-            while ($x <= $dadosPlano->parcelas){
+            while ($x < $dadosPlano->parcelas){
                 $dados = array();
                 $dados['data']['expires_in_month'] = intval($dadosPlano->duration_in_months);
                 $dados['data']['value_in_cents'] = intval($valorParcela);
@@ -118,8 +118,9 @@
                 $dados['data']['status'] = "Pendente";
                 $dados['data']['client'] = $idcliente;
                 $dados['data']['id_invoice_iugu'] = "0";
-                $dados['data']['idsubscription'] = $idParcelaPrincipal;
                 $dados['data']['date_vencto'] = $vencimento;
+                //
+                if($idParcelaPrincipal > 0) $dados['data']['idsubscription'] = $idParcelaPrincipal;
                 //
                 $url = API . '/subscriptions';
                 //
