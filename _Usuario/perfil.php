@@ -31,6 +31,11 @@
     $mostraNaoAssinante = '';
   }
   //
+  $mostraSemAssinaturas = '';
+  if(!empty($htmlAssinaturas)){
+    $mostraSemAssinaturas = 'style="display:none;"';
+  }
+  //
   //Abre o arquivo html e Inclui mensagens e trechos php
   $html = $html->buscaHtml(pathinfo( __FILE__ ));
   $html = str_replace("##Mensagem##", $msg, $html);
@@ -52,6 +57,7 @@
   $html = str_replace("##listaDeAssinaturas##", $htmlAssinaturas, $html);
   $html = str_replace("##escondeCarteirinha##", $escondeCarteirinha, $html);
   $html = str_replace("##mostraNaoAssinante##", $mostraNaoAssinante, $html);
+  $html = str_replace("##mostraSemAssinaturas##", $mostraSemAssinaturas, $html);
   echo $html;
   exit;
 ?>
