@@ -54,13 +54,8 @@
             $dados['data']['name'] = $data['nome'];
             $dados['data']['CPF'] = $data['cpf'];
             $dados['data']['surname'] = $data['apelido'];
-            $dados['data']['RG'] = $data['rg'];
-            $dados['data']['street'] = $data['rua'];
-            $dados['data']['address_number'] = $data['numero'];
-            $dados['data']['district'] = $data['bairro'];
             $dados['data']['city'] = $data['cidade'];
             $dados['data']['state'] = $data['estado'];
-            $dados['data']['CEP'] = $data['cep'];
             $dados['data']['id_iugu'] = $idClienteiugu;
             $dados['data']['users_permissions_user'] = [$idusuario];
             //
@@ -181,11 +176,9 @@
             $dados = array();
             $dados['data']['name'] = $this->util->nulo($data['nome']);
             $dados['data']['surname'] = $this->util->nulo($data['apelido']);
-            $dados['data']['RG'] = $this->util->nulo($data['rg']);
-            $dados['data']['street'] = $this->util->nulo($data['rua']);
-            $dados['data']['address_number'] = $this->util->nulo($data['numero']);
-            $dados['data']['district'] = $this->util->nulo($data['bairro']);
-            $dados['data']['CEP'] = $this->util->nulo($data['cep']);
+            // $dados['data']['CEP'] = $this->util->nulo($data['cep']);
+            // $dados['data']['city'] = $this->util->nulo($data['cidade']);
+            // $dados['data']['state'] = $this->util->nulo($data['estado']);
             //
             //
             $url = API . "/clients/{$data['idcliente']}";

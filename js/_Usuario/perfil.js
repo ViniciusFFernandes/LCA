@@ -22,13 +22,9 @@ function editarPerfil(){
   $("#apelido").attr("readonly", false);
   // $("#email").attr("readonly", false); //não permite alteração
   // $("#cpf").attr("readonly", false); //não permite alteração
-  $("#rg").attr("readonly", false);
-  $("#rua").attr("readonly", false);
-  $("#numero").attr("readonly", false);
-  $("#cidade").attr("readonly", false);
-  $("#estado").attr("readonly", false);
-  $("#bairro").attr("readonly", false);
-  $("#cep").attr("readonly", false);
+  // $("#cidade").attr("readonly", false);
+  // $("#estado").attr("readonly", false);
+  // $("#cep").attr("readonly", false);
   //
   $("#nome").focus();
   //
@@ -41,13 +37,9 @@ function salvarPerfil(){
   $("#apelido").attr("readonly", true);
   // $("#email").attr("readonly", true); //não permite alteração
   // $("#cpf").attr("readonly", true); //não permite alteração
-  $("#rg").attr("readonly", true);
-  $("#rua").attr("readonly", true);
-  $("#numero").attr("readonly", true);
   // $("#cidade").attr("readonly", true); //não permite alteração
   // $("#estado").attr("readonly", true); //não permite alteração
-  $("#bairro").attr("readonly", true);
-  $("#cep").attr("readonly", true);
+  // $("#cep").attr("readonly", true);
   //
   $.post("../_Usuario/perfil_grava.php", {
     operacao: 'alterarUsuario',
