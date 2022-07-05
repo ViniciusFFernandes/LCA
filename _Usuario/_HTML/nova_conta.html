@@ -1,75 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt" class="bodyLogin">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Liga Classe A</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <!-- main css -->
-        <link rel="stylesheet" href="css/padrao.css">
-    </head>
-    <body class="bodyLogin">
-        <div class="container-fluid linhaLogin">
-            <div class="row linhaLogin">
-                <div class="col-lg-8 col-md-6 col-sm-5 d-none d-sm-block ">
-                    <center class="alinhaCentro"><img src="img/logoGrandeTransparente.png" class="img-fluid" width="75%"></center>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-7 col-12 cardLogin">
-                    <form class="alinhaCentro" action="_BD/conecta_login.php" method="POST" id="formNovoUsuario">
-                        <center><img src="img/logo.png" class="img-fluid" width="40%"></center>
-                        <input type="hidden" id="redirect" name="redirect" value="##redirect##">
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome" autofocus>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="email" id="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="cpf" name="cpf" placeholder="CPF">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="rua" name="rua" placeholder="Rua">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="numero" name="numero" placeholder="Numero">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="cidade" name="cidade" placeholder="Cidade">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="bairro" name="bairro" placeholder="Bairro">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="estado" name="estado" placeholder="Estado">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="cep" name="cep" placeholder="CEP">
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="password" id="senha" name="senha" placeholder="Senha">
-                        </div>
-                        <div class="form-group pb-4">
-                            <input class="form-control" type="password" id="senha2" name="senha2" placeholder="Repita Senha">
-                        </div>
-                        <center class="pb-3"><button id="btnCriaConta" class="btn btnRedLogin" type="button" onclick="inserirUsuario()">CRIAR CONTA</button></center>
-                        <center><a href="#" class="link" id="btnLogar" onclick="direciona('##linkLogin##')">FAZER LOGIN</a></center>
-                    </form>
-                </div>
-            </div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Liga Classe A</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/padrao.css" />
+  </head>
+  <body class="bodyLogin">
+    <div class="container-fluid linhaLogin">
+      <div class="row linhaLogin">
+        <div class="col-lg-8 col-md-6 col-sm-5 d-none d-sm-block">
+          <center class="alinhaCentro">
+            <img
+              src="img/logoGrandeTransparente.png"
+              class="img-fluid"
+              width="75%"
+            />
+          </center>
         </div>
-    </body>
+        <div class="col-lg-4 col-md-6 col-sm-7 col-12 cardLogin">
+          <form
+            class="alinhaCentro"
+            action="_BD/conecta_login.php"
+            method="POST"
+            id="formNovoUsuario"
+          >
+            <center>
+              <img src="img/logo.png" class="img-fluid" width="40%" />
+            </center>
+            <input
+              type="hidden"
+              id="redirect"
+              name="redirect"
+              value="##redirect##"
+            />
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Nome"
+                autofocus
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                id="apelido"
+                name="apelido"
+                placeholder="Apelido (Opcional)"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email (Opcional)"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                id="cpf"
+                name="cpf"
+                placeholder="CPF"
+              />
+            </div>
+            <!-- <div class="form-group">
+                            <input class="form-control" type="text" id="rua" name="rua" placeholder="Rua">
+                        </div> -->
+            <!-- <div class="form-group">
+                            <input class="form-control" type="text" id="numero" name="numero" placeholder="Numero">
+                        </div> -->
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Cidade"
+              />
+            </div>
+            <!-- <div class="form-group">
+                            <input class="form-control" type="text" id="bairro" name="bairro" placeholder="Bairro">
+                        </div> -->
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                id="estado"
+                name="estado"
+                placeholder="Estado"
+              />
+            </div>
+            <!-- <div class="form-group">
+                            <input class="form-control" type="text" id="cep" name="cep" placeholder="CEP">
+                        </div> -->
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Senha"
+              />
+            </div>
+            <div class="form-group pb-4">
+              <input
+                class="form-control"
+                type="password"
+                id="senha2"
+                name="senha2"
+                placeholder="Repita Senha"
+              />
+            </div>
+            <center class="pb-3">
+              <button
+                id="btnCriaConta"
+                class="btn btnRedLogin"
+                type="button"
+                onclick="inserirUsuario()"
+              >
+                CRIAR CONTA
+              </button>
+            </center>
+            <center>
+              <a
+                href="#"
+                class="link"
+                id="btnLogar"
+                onclick="direciona('##linkLogin##')"
+                >FAZER LOGIN</a
+              >
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 
-    <!-- main js -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.mask.js"></script>
-    <script src="js/padrao.js"></script>
-    <script src="js/_Usuario/nova_conta.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/lightbox/simpleLightbox.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
+  <!-- main js -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mask.js"></script>
+  <script src="js/padrao.js"></script>
+  <script src="js/_Usuario/nova_conta.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/lightbox/simpleLightbox.min.js"></script>
+  <script src="js/sweetalert.min.js"></script>
 </html>

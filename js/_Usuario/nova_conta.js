@@ -7,14 +7,14 @@ $(document).ready(function(){
         }
       }
     });
-    $("#cep").mask("99999-999", 
-    {translation: {
-      '9': {
-        pattern: /[0-9]/,
-        optional: false
-      }
-    }
-  });
+    // $("#cep").mask("99999-999", {
+    //   translation: {
+    //     '9': {
+    //       pattern: /[0-9]/,
+    //       optional: false
+    //     }
+    //   }
+    // });
 })
 
 function inserirUsuario(){
@@ -225,20 +225,18 @@ function inserirUsuario(){
   }
   //
   // $("#formNovoUsuario").submit();
-  $.post("_BD/conecta_login.php", 
-        {operacao: 'novaConta',
+  $.post("_BD/conecta_login.php", {
+          operacao: 'novaConta',
           redirect: $("#redirect").val(),
           nome: $("#nome").val(),
+          apelido: $("#apelido").val(),
           email: $("#email").val(),
           cpf: $("#cpf").val(),
-          rua: $("#rua").val(),
-          numero: $("#numero").val(),
           cidade: $("#cidade").val(),
-          bairro: $("#bairro").val(),
           estado: $("#estado").val(),
-          cep: $("#cep").val(),
           senha: $("#senha").val(),
-          senha2: $("#senha2").val()},
+          senha2: $("#senha2").val()
+        },
         function(data){
           desabilitaHabilitaBtn('Habilitar');
           if(data.erro == 1){
