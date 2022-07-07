@@ -90,6 +90,11 @@
 
         public function incluirNovoUsuario($data){
             //
+            $cliente = self::buscarUsuarioCPF($data['cpf']);
+            if($cliente->id > 0){
+                return "CPF já cadastrado!";
+            }
+            //
             $idClienteiugu = $this->iugu->incluirCliente($data);
             //
             $headers = array();
@@ -141,6 +146,38 @@
             $parameters = array();
             $parameters['populate'] = '*';
             $parameters['filters']['users_permissions_user'] = $_SESSION['idusuario'];
+            //
+            $url = API . "/clients?" . http_build_query($parameters);
+            //
+            ob_start();
+            //
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_exec($ch);
+            //
+            // JSON de retorno  
+            $resposta = json_decode(ob_get_contents());
+            // $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            // $erro = curl_errno($ch);
+            // $info = curl_getinfo($ch);
+            //
+            ob_end_clean();
+            curl_close($ch);
+            //
+            return $resposta->data[0];
+        }
+
+        public function buscarUsuarioCPF($cpf){
+            $headers = array();
+            $headers[] = "Content-Type: application/json";
+            $headers[] = "Authorization: Bearer " . $_SESSION['jwt'];
+            //
+            $parameters = array();
+            $parameters['populate'] = '*';
+            $parameters['filters']['CPF'] = $cpf;
             //
             $url = API . "/clients?" . http_build_query($parameters);
             //
