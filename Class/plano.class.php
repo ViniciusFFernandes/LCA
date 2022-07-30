@@ -384,10 +384,7 @@
 			$html = str_replace("##idassinatura##",  $dados->id, $html);
             //
             $html = str_replace("##id##", $dados->id, $html);
-            //
-            // $html = "<div class='mt-4'>a</div><!-- <pre>";
-            $html .= print_r($dados);
-            // $html .= "</pre> -->";
+            // 
             return $html;
         }
 
