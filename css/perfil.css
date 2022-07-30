@@ -115,6 +115,7 @@ div.container-sair {
   border-radius: 16px;
   text-align: center;
   align-items: center;
+  min-height: 90px;
 }
 
 .container-assinatura > .buttons {
@@ -124,12 +125,12 @@ div.container-sair {
   justify-content: end;
 }
 
-@media only screen and (max-width: 800px) {
-  .container-assinatura .info {
-    flex-wrap: nowrap;
-    align-items: center;
-    padding-top: 16px;
-  }
+.container-assinatura .info {
+  align-items: center;
+}
+
+input:read-only {
+  filter: brightness(0.8);
 }
 
 @media only screen and (max-width: 600px) {

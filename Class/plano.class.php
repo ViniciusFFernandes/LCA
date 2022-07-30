@@ -366,6 +366,8 @@
             $html = str_replace("##valorAssinatura##", $this->util->formataMoeda($dados->attributes->value_in_cents / 100), $html);
 			$html = str_replace("##duracaoAssinatura##", $dados->attributes->expires_in_month, $html);
 			$html = str_replace("##duracaoVencimento##", $this->util->convertData($dados->attributes->date_expire), $html);
+            $html = str_replace("##dataVencto##", $this->util->convertData($dados->attributes->date_vencto), $html);
+            $html = str_replace("##dataCompra##", $this->util->convertDataAPI($dados->attributes->date_buy, false), $html);
 			$html = str_replace("##statusAssinatura##", $dados->attributes->status, $html);
             //
             $btnPagar = '';
@@ -383,6 +385,9 @@
             //
             $html = str_replace("##id##", $dados->id, $html);
             //
+            // $html = "<div class='mt-4'>a</div><!-- <pre>";
+            $html .= print_r($dados);
+            // $html .= "</pre> -->";
             return $html;
         }
 
